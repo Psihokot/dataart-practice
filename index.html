@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Интернет-магазин</title>
+    <!--<link href="jquery-2.2.4.min.js" rel="stylesheet">-->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <!--<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="bootstrap-3.3.5-dist/js/bootstrap.min.js" rel="stylesheet">-->
 </head>
 <body>
    <div class="layout_positioner">
@@ -13,22 +16,22 @@
                <div class="header_links">
                    <ul>
                        <li>
-                           <a href="somelink">О компании</a>
+                           <a href="#">О компании</a>
                        </li>
                        <li>
-                           <a href="somelink">Каталог</a>
+                           <a href="#">Каталог</a>
                        </li>
                        <li>
-                           <a href="somelink">Доставка</a>
+                           <a href="#">Доставка</a>
                        </li>
                        <li>
-                           <a href="somelink">Наши магазины</a>
+                           <a href="#">Наши магазины</a>
                        </li>
                        <li>
-                           <a href="somelink">Оптовикам</a>
+                           <a href="#">Оптовикам</a>
                        </li>
                        <li>
-                           <a href="somelink">Контакты</a>
+                           <a href="#">Контакты</a>
                        </li>
                    </ul>
                </div>
@@ -43,89 +46,89 @@
                <div class="header_logo"></div>
                <div class="header_contacts">
                    <div class="header_contacts_numbers">
-                       <div class="hc_numbers_icon"></div>
+                       <i class="icon hc_numbers_icon"></i>
                        (495) <span>234-22-33</span>, (495) <span>232-22-35</span>
                    </div>
                    <div class="header_contacts_mail">
-                       <div class="hc_mail_icon"></div>
-                       <a href="somelink">Написать сообщение</a>
+                       <i class="icon hc_mail_icon"></i>
+                       <a href="#">Написать сообщение</a>
                    </div>
                    <div class="header_contacts_icq">
-                       <div class="hc_icq_icon"></div>
+                       <i class="icon hc_icq_icon"></i>
                        288-22-08
                    </div>
                </div>
                <div class="header_personal">
                    <div class="header_personal_basket">
-                       <div class="hp_basket_icon"></div>
+                       <i class="icon hp_basket_icon"></i>
                        <span>В вашей корзине пусто</span>
                    </div>
                    <div class="header_personal_account">
-                       <div class="hp_account_icon"></div>
-                       <a href="somelink">Личный кабинет</a>
+                       <i class="icon hp_account_icon"></i>
+                       <a href="#">Личный кабинет</a>
                    </div>
                </div>
            </div>
        </header>
        <div class="main clearfix">
-           <div class="main_leftmenu">
+           <aside class="main_leftmenu">
                <div class="main_leftmenu_categories">
                    <ul>
-                       <li class="automodels">
-                           <a href="somelink">Автомодели</a>
+                       <li>
+                           <a href="#">Автомодели</a>
                        </li>
-                       <li class="airplanes">
-                           <a href="somelink">Самолеты</a>
+                       <li>
+                           <a href="#">Самолеты</a>
                        </li>
-                       <li class="helicopters pointed">
-                           <a href="somelink">Вертолеты</a>
+                       <li id="pointed">
+                           <a href="#">Вертолеты</a>
                            <ul>
-                               <li class="for_nubies">
-                                   <a href="somelink">
-                                       <div class="leftmenu_sublist_icon"></div>
+                               <li>
+                                   <a href="#">
+                                       <i class="icon leftmenu_sublist_icon"></i>
                                        Для начинающих (Соосные)
                                    </a>
                                </li>
-                               <li class="with_electro_engine">
-                                   <a href="somelink">
-                                       <div class="leftmenu_sublist_icon"></div>
+                               <li>
+                                   <a href="#">
+                                       <i class="icon leftmenu_sublist_icon"></i>
                                        С электродвигателем
                                    </a>
                                </li>
-                               <li class="helicopters_gas_engine">
-                                   <a href="somelink">
-                                       <div class="leftmenu_sublist_icon"></div>
+                               <li>
+                                   <a href="#">
+                                       <i class="icon leftmenu_sublist_icon"></i>
                                        Вертолеты с ДВС
                                    </a>
                                </li>
-                               <li class="mikado_helicopters">
-                                   <a href="somelink">
-                                       <div class="leftmenu_sublist_icon"></div>
+                               <li>
+                                   <a href="#">
+                                       <i class="icon leftmenu_sublist_icon"></i>
                                        Вертолеты Mikado
                                    </a>
                                </li>
                            </ul>
                        </li>
-                       <li class="battery_and_cabels">
-                           <a href="somelink">Аккумуляторы, кабели</a>
+                       <li>
+                           <a href="#">Аккумуляторы, кабели</a>
                        </li>
-                       <li class="apparatus">
-                           <a href="somelink">Аппаратура</a>
+                       <li>
+                           <a href="#">Аппаратура</a>
                        </li>
-                       <li class="instruments_and_materials">
-                           <a href="somelink">Инструмент, материалы</a>
+                       <li>
+                           <a href="#">Инструмент, материалы</a>
                        </li>
-                       <li class="fasteners">
-                           <a href="somelink">Винты, крепеж, клей</a>
+                       <li>
+                           <a href="#">Винты, крепеж, клей</a>
                        </li>
-                       <li class="gas_engines">
-                           <a href="somelink">Двигатели ДВС</a>
+                       <li>
+                           <a href="#">Двигатели ДВС</a>
                        </li>
-                       <li class="electro_engines">
-                           <a href="somelink">Электродвигатели</a>
+                       <li>
+                           <a href="#">Электродвигатели</a>
                        </li>
-                       <li class="boats">
-                           <a href="somelink">Катера, яхты</a>
+                       <li>
+                           <a href="#">Катера, яхты</a>
                        </li>
                    </ul>
                </div>
@@ -133,21 +136,21 @@
                    <div class="leftmenu_news_element">
                        <div class="news_element_date">01.01.2016</div>
                        <div class="news_element_title">
-                           <a href="somelink">Много скидок!</a>
+                           <a href="#">Много скидок!</a>
                        </div>
                        <div class="news_element_content">Настало лето, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбилеем.</div>
                    </div>
                    <div class="leftmenu_news_element">
                        <div class="news_element_date">01.01.2016</div>
                        <div class="news_element_title">
-                           <a href="somelink">Обменяй старое на новое!</a>
+                           <a href="#">Обменяй старое на новое!</a>
                        </div>
                        <div class="news_element_content">Настало лето, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбилеем.</div>
                    </div>
                    <div class="leftmenu_news_element">
                        <div class="news_element_date">01.01.2016</div>
                        <div class="news_element_title">
-                           <a href="somelink">Обновление в каталогах!</a>
+                           <a href="#">Обновление в каталогах!</a>
                        </div>
                        <div class="news_element_content">Настало лето, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбилеем.</div>
                    </div>
@@ -160,11 +163,11 @@
                    <div class="leftmenu_advertising_element"></div>
                    <div class="leftmenu_advertising_element"></div>
                </div>
-           </div>
+           </aside>
            <div class="main_content">
                <div class="main_content_header">
                    <div class="mcontent_header_navigation">
-                       <a href="somelink">Главная</a>
+                       <a href="#">Главная</a>
                        <div class="navigation_arrow"></div>
                        <span>Каталог</span>
                    </div>
@@ -194,100 +197,112 @@
                    </div>
                </div>
                <div class="main_goods">
-                   <div id="one" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model1.png">
                            <div class="good_price">18 480 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT</a>
+                           <a href="#">CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT</a>
                        </div>
                    </div>
-                   <div id="two" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model2.png">
                            <div class="good_price">5 712 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">Кордовая модель-копия PT-19 Profile Control Line 36 ARF</a>
+                           <a href="#">Кордовая модель-копия PT-19 Profile Control Line 36 ARF</a>
                        </div>
                    </div>
-                   <div id="three" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model3.png">
                            <div class="good_price">18 240 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">Электрический мини-вертолет HM 60#B</a>
+                           <a href="#">Электрический мини-вертолет HM 60#B</a>
                        </div>
                    </div>
-                   <div id="four" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model1.png">
                            <div class="good_price">18 480 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT</a>
+                           <a href="#">CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT</a>
                        </div>
                    </div>
-                   <div id="five" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model3.png">
                            <div class="good_price">18 240 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">Электрический мини-вертолет HM 60#B</a>
+                           <a href="#">Электрический мини-вертолет HM 60#B</a>
                        </div>
                    </div>
-                   <div id="six" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model2.png">
                            <div class="good_price">5 712 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">Кордовая модель-копия PT-19 Profile Control Line 36 ARF</a>
+                           <a href="#">Кордовая модель-копия PT-19 Profile Control Line 36 ARF</a>
                        </div>
                    </div>
-                   <div id="seven" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model3.png">
                            <div class="good_price">18 240 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">Электрический мини-вертолет HM 60#B</a>
+                           <a href="#">Электрический мини-вертолет HM 60#B</a>
                        </div>
                    </div>
-                   <div id="eight" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model2.png">
                            <div class="good_price">5 712 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">Кордовая модель-копия PT-19 Profile Control Line 36 ARF</a>
+                           <a href="#">Кордовая модель-копия PT-19 Profile Control Line 36 ARF</a>
                        </div>
                    </div>
-                   <div id="nine" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model1.png">
                            <div class="good_price">18 480 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT</a>
+                           <a href="#">CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT</a>
                        </div>
                    </div>
-                   <div id="ten" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model1.png">
                            <div class="good_price">18 480 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT</a>
+                           <a href="#">CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT</a>
                        </div>
                    </div>
-                   <div id="eleven" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model3.png">
                            <div class="good_price">18 240 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">Электрический мини-вертолет HM 60#B</a>
+                           <a href="#">Электрический мини-вертолет HM 60#B</a>
                        </div>
                    </div>
-                   <div id="twelve" class="main_goods_element">
+                   <div class="main_goods_element">
                        <div class="goods_element_image">
+                           <img src="images/model2.png">
                            <div class="good_price">5 712 р.</div>
                        </div>
                        <div class="goods_element_title">
-                           <a href="somelink">Кордовая модель-копия PT-19 Profile Control Line 36 ARF</a>
+                           <a href="#">Кордовая модель-копия PT-19 Profile Control Line 36 ARF</a>
                        </div>
                    </div>
                </div>
@@ -296,34 +311,34 @@
                    <div class="main_pages_list">
                        <ul>
                            <li>
-                               <a href="somelink">1</a>
+                               <a href="#">1</a>
                            </li>
                            <li>
-                               <a id="selected" href="somelink">2</a>
+                               <a class="selected" href="#">2</a>
                            </li>
                            <li>
-                               <a href="somelink">3</a>
+                               <a href="#">3</a>
                            </li>
                            <li>
-                               <a href="somelink">4</a>
+                               <a href="#">4</a>
                            </li>
                            <li>
-                               <a href="somelink">10</a>
+                               <a href="#">10</a>
                            </li>
                            <li class="list_dots">..</li>
                            <li>
-                               <a href="somelink">45</a>
+                               <a href="#">45</a>
                            </li>
                        </ul>
                    </div>
                    <div class="main_pages_switch">
                        <div class="previous_page">
                            <div class="previous_page_icon"></div>
-                           <a href="somelink">Предыдущая страница</a>
+                           <a href="#">Предыдущая страница</a>
                        </div>
                        <span>-</span>
                        <div class="next_page">
-                           <a href="somelink">Следующая страница</a>
+                           <a href="#">Следующая страница</a>
                            <div class="next_page_icon"></div>
                        </div>
                    </div>
@@ -331,7 +346,7 @@
                <div class="main_about">
                    <h1>О компании</h1>
                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-                   <a href="somelink">читать дальше</a>
+                   <a href="#">читать дальше</a>
                </div>
            </div>
        </div>
@@ -339,39 +354,39 @@
            <div class="bottom_menu_links">
                <ul>
                    <li>
-                       <a href="somelink">О компании</a>
+                       <a href="#">О компании</a>
                    </li>
                    <li>
-                       <a href="somelink">Каталог</a>
+                       <a href="#">Каталог</a>
                    </li>
                    <li>
-                       <a href="somelink">Доставка</a>
+                       <a href="#">Доставка</a>
                    </li>
                    <li>
-                       <a href="somelink">Наши магазины</a>
+                       <a href="#">Наши магазины</a>
                    </li>
                    <li>
-                       <a href="somelink">Оптовикам</a>
+                       <a href="#">Оптовикам</a>
                    </li>
                    <li>
-                       <a href="somelink">Контакты</a>
+                       <a href="#">Контакты</a>
                    </li>
                </ul>
            </div>
        </div>
        <footer>
            <div class="footer_info">
-               <span class="rights">@ 2007-2016 Интернет-супермаркет <a href="somelink">"Elwau.ru"</a></span><br>
-               <span>Адрес: 105118, г.Москва, ул. Кирпичная, д. 22</span><br>
-               <span>Тел.: +7 (495) 540-55-1, 8 (800) 555-55-90</span><br>
-               <span>Email: info@elwau.ru</span>
+               <div class="rights">@ 2007-2016 Интернет-супермаркет <a href="#">"Elwau.ru"</a></div>
+               <div>Адрес: 105118, г.Москва, ул. Кирпичная, д. 22</div>
+               <div>Тел.: +7 (495) 540-55-1, 8 (800) 555-55-90</div>
+               <div>Email: info@elwau.ru</div>
            </div>
            <div class="footer_counters">
                <div class="footer_counter"></div>
                <div class="footer_counter"></div>
            </div>
            <div class="footer_author">
-               <span>Дизайн сайта - <a href="somelink">Плюснин Никита</a></span>
+               <div>Дизайн сайта - <a href="#">Плюснин Никита</a></div>
            </div>
        </footer>
    </div>
