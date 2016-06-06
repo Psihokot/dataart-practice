@@ -48,6 +48,9 @@ header {
 .header_menu a {
     color: #fff;
 }
+.header_menu a:hover {
+    color: #fff;
+}
 .header_search {
     position: relative;
     float: right;
@@ -60,7 +63,7 @@ header {
     border-radius: 2px;
 }
 .header_search input {
-    width: 213px;
+    width: 228px;
     height: 22px;
     border: none;
     background-color: #eff0f2;
@@ -135,6 +138,7 @@ header {
     float: left;
     width: 260px;
     height: 84px;
+    margin-left: 18px;
     padding-top: 42px;
 }
 .header_personal_basket {
@@ -254,15 +258,15 @@ header {
     float: left;
     padding-left: 32px;
 }
-.mcontent_header_navigation {
+.main_content_navigation {
     margin-bottom: 12px;
 }
-.mcontent_header_navigation a,
+.main_content_navigation a,
 .navigation_arrow {
     display: inline-block;
     margin-right: 8px;
 }
-.mcontent_header_navigation a {
+.main_content_navigation a {
     color: #e27d55;
 }
 .navigation_arrow {
@@ -271,7 +275,7 @@ header {
     padding-bottom: 4px;
     background: url("images/navigation_arrow.png") no-repeat 50% 85%;
 }
-.mcontent_header_navigation span {
+.main_content_navigation span {
     color: #8c8c8c;
 }
 .mcontent_header_categories {
@@ -443,9 +447,9 @@ h1 {
     color: #e27d55;
 }
 .main_bottom_menu {
-    height: 18px;
+    height: 48px;
     margin-top: 8px;
-    width: 929px;
+    width: 960px;
     padding: 15px 0 15px 31px;
 }
 .main_bottom_menu li {
