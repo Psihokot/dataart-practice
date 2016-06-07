@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT</title>
-    <!--<link href="jquery-2.2.4.min.js" rel="stylesheet">-->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="good-style.css">
     <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link href="bootstrap-3.3.5-dist/js/bootstrap.min.js" rel="stylesheet">-->
 </head>
 <body>
 <div class="layout_positioner">
@@ -52,7 +50,22 @@
                 </div>
                 <div class="header_contacts_mail">
                     <i class="icon hc_mail_icon"></i>
-                    <a href="#">Написать сообщение</a>
+                    <a href="#messageModal" data-toggle="modal">Написать сообщение</a>
+                </div>
+                <div class="modal" id="messageModal">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">×</button>
+                        <h3>Отправьте нам сообщение</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form class="well">
+                            <input type="text" class="span3" placeholder="Ваше имя">
+                            <div></div>
+                            <textarea class="input-xlarge" rows="8" cols="64" placeholder="Ваше сообщение..."></textarea>
+                            <div></div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="header_contacts_icq">
                     <i class="icon hc_icq_icon"></i>

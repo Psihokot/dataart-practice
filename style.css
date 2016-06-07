@@ -25,6 +25,9 @@ header, .main, .main_bottom_menu {
 .icon {
     float: left;
 }
+.divider {
+    margin: 10px 0 10px 0;
+}
 
                         /*CSS for header*/
 
@@ -118,6 +121,21 @@ header {
 .header_contacts_mail a {
     color: #000;
 }
+.header_contacts div.modal.in {
+    width: 550px;
+    max-height: 400px;
+    margin: auto;
+    padding-right: 0 !important;
+    background-color: #fff;
+}
+.header_contacts .modal-body form {
+    margin-bottom: 0;
+}
+.header_contacts .modal-body input {
+    margin-bottom: 5px;
+}
+.header_contacts .modal-body textarea {
+}
 .hc_mail_icon {
     margin-right: 8px;
     width: 16px;
@@ -210,34 +228,12 @@ header {
 .main_leftmenu_categories .accordion-heading a.pointed {
     color: #fff;
 }
-/*.main_leftmenu_categories a.collapsed {*/
-    /*color: #fff;*/
-/*}*/
 .main_leftmenu_categories .accordion-group:hover .accordion-heading {
     background-color: #ed6d3b;
 }
 .main_leftmenu_categories .accordion-group:hover .accordion-heading a {
     color: #fff;
 }
-/*.main_leftmenu_categories > ul > li > a {*/
-    /*color: #4f4f4f;*/
-    /*background-color: #f3f2f0;*/
-/*}*/
-
-/*.main_leftmenu_categories #pointed > a {*/
-    /*background-color: #ed6d3b;*/
-    /*color: #fff;*/
-    /*text-decoration: none;*/
-/*}*/
-/*#pointed ul {*/
-    /*padding: 8px 0;*/
-/*}*/
-/*#pointed ul a {*/
-    /*height: 24px;*/
-    /*line-height: 24px;*/
-    /*font-size: 13px;*/
-    /*color: #8c8c8c;*/
-/*}*/
 .main_leftmenu_news {
     width: 210px;
     padding: 10px 0 35px 0;

@@ -49,7 +49,22 @@
                    </div>
                    <div class="header_contacts_mail">
                        <i class="icon hc_mail_icon"></i>
-                       <a href="#">Написать сообщение</a>
+                       <a href="#messageModal" data-toggle="modal">Написать сообщение</a>
+                   </div>
+                   <div class="modal" id="messageModal">
+                       <div class="modal-header">
+                           <button class="close" data-dismiss="modal">×</button>
+                           <h3>Отправьте нам сообщение</h3>
+                       </div>
+                       <div class="modal-body">
+                           <form class="well">
+                               <input type="text" class="span3" placeholder="Ваше имя">
+                               <div></div>
+                               <textarea class="input-xlarge" rows="8" cols="64" placeholder="Ваше сообщение..."></textarea>
+                               <div></div>
+                               <button type="submit" class="btn btn-primary">Отправить</button>
+                           </form>
+                       </div>
                    </div>
                    <div class="header_contacts_icq">
                        <i class="icon hc_icq_icon"></i>
