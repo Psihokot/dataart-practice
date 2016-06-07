@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT</title>
-    <!--<link href="jquery-2.2.4.min.js" rel="stylesheet">-->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="good-style.css">
     <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link href="bootstrap-3.3.5-dist/js/bootstrap.min.js" rel="stylesheet">-->
 </head>
 <body>
 <div class="layout_positioner">
@@ -52,7 +50,22 @@
                 </div>
                 <div class="header_contacts_mail">
                     <i class="icon hc_mail_icon"></i>
-                    <a href="#">Написать сообщение</a>
+                    <a href="#messageModal" data-toggle="modal">Написать сообщение</a>
+                </div>
+                <div class="modal" id="messageModal">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">×</button>
+                        <h3>Отправьте нам сообщение</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form class="well">
+                            <input type="text" class="span3" placeholder="Ваше имя">
+                            <div></div>
+                            <textarea class="input-xlarge" rows="8" cols="64" placeholder="Ваше сообщение..."></textarea>
+                            <div></div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="header_contacts_icq">
                     <i class="icon hc_icq_icon"></i>
@@ -74,64 +87,115 @@
     <div class="main clearfix">
         <aside class="main_leftmenu">
             <div class="main_leftmenu_categories">
-                <ul>
-                    <li>
-                        <a href="#">Автомодели</a>
-                    </li>
-                    <li>
-                        <a href="#">Самолеты</a>
-                    </li>
-                    <li id="pointed">
-                        <a href="#">Вертолеты</a>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="icon leftmenu_sublist_icon"></i>
-                                    Для начинающих (Соосные)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon leftmenu_sublist_icon"></i>
-                                    С электродвигателем
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon leftmenu_sublist_icon"></i>
-                                    Вертолеты с ДВС
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon leftmenu_sublist_icon"></i>
-                                    Вертолеты Mikado
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Аккумуляторы, кабели</a>
-                    </li>
-                    <li>
-                        <a href="#">Аппаратура</a>
-                    </li>
-                    <li>
-                        <a href="#">Инструмент, материалы</a>
-                    </li>
-                    <li>
-                        <a href="#">Винты, крепеж, клей</a>
-                    </li>
-                    <li>
-                        <a href="#">Двигатели ДВС</a>
-                    </li>
-                    <li>
-                        <a href="#">Электродвигатели</a>
-                    </li>
-                    <li>
-                        <a href="#">Катера, яхты</a>
-                    </li>
-                </ul>
+                <div class="accordion" id="accordion">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#">Автомодели</a>
+                        </div>
+                        <div class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner"></div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#">Самолеты</a>
+                        </div>
+                        <div class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner"></div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="pointed accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse">Вертолеты</a>
+                        </div>
+                        <div id="collapse" class="accordion-body collapse in" aria-expanded="true">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            Для начинающих (Соосные)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            С электродвигателем
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            Вертолеты с ДВС
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            Вертолеты Mikado
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#">Аккумуляторы, кабели</a>
+                        </div>
+                        <div class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner"></div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#">Аппаратура</a>
+                        </div>
+                        <div class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner"></div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#">Инструмент, материалы</a>
+                        </div>
+                        <div class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner"></div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#">Винты, крепеж, клей</a>
+                        </div>
+                        <div class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner"></div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#">Двигатели ДВС</a>
+                        </div>
+                        <div class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner"></div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#">Электродвигатели</a>
+                        </div>
+                        <div class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner"></div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#">Катера, яхты</a>
+                        </div>
+                        <div class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="main_leftmenu_news">
                 <div class="leftmenu_news_element">
