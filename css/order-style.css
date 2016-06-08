@@ -1,0 +1,16 @@
+.main_content {
+    width: 658px;
+}
+.input-group {
+    width: 186px;
+    margin-left: 14px;
+}
+input[type="text"] {
+    display: inline-block;
+    padding: 4px 6px;
+    margin-bottom: 9px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555555;
+    border-radius: 3px;
+}

@@ -85,13 +85,13 @@
     height: 21px;
 }
 .vk_icon {
-    background: url("images/vk_icon.png") no-repeat;
+    background: url("../images/vk_icon.png") no-repeat;
 }
 .fb_icon {
-    background: url("images/fb_icon.png") no-repeat;
+    background: url("../images/fb_icon.png") no-repeat;
 }
 .tweet_icon {
-    background: url("images/tweeter_icon.png") no-repeat;
+    background: url("../images/tweeter_icon.png") no-repeat;
 }
 .top_right_links a {
     color: #e27d55;
@@ -100,7 +100,7 @@
     width: 13px;
     height: 20px;
     margin-right: 10px;
-    background: url("images/list_style_image.png") no-repeat 50% 50%;
+    background: url("../images/list_style_image.png") no-repeat 50% 50%;
 }
 .main_content_description {
     position: relative;
