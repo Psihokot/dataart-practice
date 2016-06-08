@@ -1,5 +1,5 @@
 body {
-    background: url("images/background.png");
+    background: url("../images/background.png");
 }
 li {
     list-style: none;
@@ -78,7 +78,7 @@ header {
     right: 4px;
     width: 14px;
     height: 14px;
-    background: url("images/search.png") no-repeat;
+    background: url("../images/search.png") no-repeat;
     opacity: 0.5;
 }
 .header_content {
@@ -86,10 +86,11 @@ header {
     height: 126px;
 }
 .header_logo {
+    display: block;
     float: left;
     width: 305px;
     height: 126px;
-    background: url("images/logo.png") no-repeat 30px 8px;
+    background: url("../images/logo.png") no-repeat 30px 8px;
 }
 .header_contacts {
     float: left;
@@ -110,7 +111,7 @@ header {
     margin-right: 10px;
     width: 14px;
     height: 18px;
-    background: url("images/phone.png") no-repeat 50% 50%;
+    background: url("../images/phone.png") no-repeat 50% 50%;
 }
 .header_contacts_mail {
     font-size: 14px;
@@ -121,26 +122,23 @@ header {
 .header_contacts_mail a {
     color: #000;
 }
-.header_contacts div.modal.in {
-    width: 550px;
-    max-height: 400px;
+div.modal.in {
     margin: auto;
     padding-right: 0 !important;
-    background-color: #fff;
 }
-.header_contacts .modal-body form {
+.modal-body form {
     margin-bottom: 0;
 }
-.header_contacts .modal-body input {
+.modal-body input {
     margin-bottom: 5px;
 }
-.header_contacts .modal-body textarea {
+.modal-body textarea {
 }
 .hc_mail_icon {
     margin-right: 8px;
     width: 16px;
     height: 18px;
-    background: url("images/mail.png") no-repeat 50% 50%;
+    background: url("../images/mail.png") no-repeat 50% 50%;
 }
 .header_contacts_icq {
     display: inline-block;
@@ -150,7 +148,7 @@ header {
     margin-right: 8px;
     width: 18px;
     height: 18px;
-    background: url("images/icq.png") no-repeat 50% 50%;
+    background: url("../images/icq.png") no-repeat 50% 50%;
 }
 .header_personal {
     float: left;
@@ -168,7 +166,7 @@ header {
     margin-right: 8px;
     width: 15px;
     height: 15px;
-    background: url("images/basket.png") no-repeat 50% 50%;
+    background: url("../images/basket.png") no-repeat 50% 50%;
 }
 .header_personal_account {
     margin-top: 14px;
@@ -177,7 +175,7 @@ header {
     margin-right: 8px;
     width: 16px;
     height: 15px;
-    background: url("images/personal_account.png") no-repeat 50% 50%;
+    background: url("../images/personal_account.png") no-repeat 50% 50%;
 }
 .header_personal_account a {
     color: #da501a;
@@ -197,13 +195,14 @@ header {
     height: 20px;
     width: 13px;
     margin-right: 5px;
-    background: url("images/list_style_image.png") no-repeat 50% 50%;
+    background: url("../images/list_style_image.png") no-repeat 50% 50%;
 }
 .accordion-group {
     margin-bottom: 2px;
     background-color: #f3f2f0;
 }
-.main_leftmenu_categories .accordion-heading a {
+.accordion-group > a,
+.accordion-heading a {
     display: block;
     height: 32px;
     padding-left: 18px;
@@ -212,26 +211,28 @@ header {
     text-decoration: underline;
     color: #4f4f4f;
 }
-.main_leftmenu_categories .accordion-body {
+.accordion-body {
     padding-left: 16px;
     background-color: #f8f8f8;
 }
-.main_leftmenu_categories .accordion-body a {
+.accordion-body a {
     height: 24px;
     line-height: 24px;
     font-size: 13px;
     color: #8c8c8c;
 }
-.main_leftmenu_categories .pointed {
+.pointed {
     background-color: #ed6d3b;
 }
-.main_leftmenu_categories .accordion-heading a.pointed {
+.accordion-heading a.pointed {
     color: #fff;
 }
-.main_leftmenu_categories .accordion-group:hover .accordion-heading {
+.accordion-group:hover > a,
+.accordion-group:hover .accordion-heading {
     background-color: #ed6d3b;
 }
-.main_leftmenu_categories .accordion-group:hover .accordion-heading a {
+.accordion-group:hover > a,
+.accordion-group:hover .accordion-heading a {
     color: #fff;
 }
 .main_leftmenu_news {
@@ -270,7 +271,7 @@ header {
     right: 24px;
     width: 16px;
     height: 16px;
-    background: url("images/pensil.png") no-repeat 50% 50%;
+    background: url("../images/pensil.png") no-repeat 50% 50%;
 }
 .leftmenu_advertising_element {
     margin-top: 30px;
@@ -297,8 +298,8 @@ header {
 .navigation_arrow {
     width: 8px;
     height: 5px;
-    padding-bottom: 4px;
-    background: url("images/navigation_arrow.png") no-repeat 50% 85%;
+    padding-bottom: 14px;
+    background: url("../images/navigation_arrow.png") no-repeat 50% 85%;
 }
 .main_content_navigation span {
     color: #8c8c8c;
@@ -336,7 +337,7 @@ header {
     width: 12px;
     height: 12px;
     cursor: pointer;
-    background: url("images/navigation_plus.png") no-repeat;
+    background: url("../images/navigation_plus.png") no-repeat;
 }
 .mcontent_header_sort {
     margin-top: 14px;
@@ -361,10 +362,10 @@ header {
     opacity: 0.5;
 }
 .navigation_arrow_up {
-    background: url("images/arrow_up.png") no-repeat;
+    background: url("../images/arrow_up.png") no-repeat;
 }
 .navigation_arrow_down {
-    background: url("images/arrow_down.png") no-repeat;
+    background: url("../images/arrow_down.png") no-repeat;
 }
 .main_goods {
     width: 657px;
@@ -453,12 +454,12 @@ a.selected {
 .previous_page_icon {
     width: 8px;
     height: 5px;
-    background: url("images/left_arrow.png");
+    background: url("../images/left_arrow.png");
 }
 .next_page_icon {
     width: 8px;
     height: 5px;
-    background: url("images/navigation_arrow.png");
+    background: url("../images/navigation_arrow.png");
 }
 .main_about {
     width: 658px;
@@ -517,7 +518,7 @@ footer a {
     width: 88px;
     height: 31px;
     margin-right: 10px;
-    background: url("images/counter.png");
+    background: url("../images/counter.png");
 }
 .footer_author {
     float: right;
@@ -525,4 +526,35 @@ footer a {
 }
 .footer_author div {
     display: block;
+}
+.control-group.error > label,
+.control-group.error .help-block,
+.control-group.error .help-inline {
+    color: #b94a48;
+}
+
+.control-group.error .checkbox,
+.control-group.error .radio,
+.control-group.error input,
+.control-group.error select,
+.control-group.error textarea {
+    color: #b94a48;
+}
+
+.control-group.error input,
+.control-group.error select,
+.control-group.error textarea {
+    border-color: #b94a48;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.control-group.error input:focus,
+.control-group.error select:focus,
+.control-group.error textarea:focus {
+    border-color: #953b39;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
 }

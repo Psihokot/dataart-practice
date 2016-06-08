@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Каталог</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
 </head>
 <body>
+    <div class="modal fade" id="messageModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">×</button>
+                    <h3>Отправьте нам сообщение</h3>
+                </div>
+                <div class="modal-body" data-toggle="modal">
+                    <form class="well">
+                        <input type="text" class="span3" placeholder="Ваше имя">
+                        <textarea class="input-xlarge" rows="8" cols="64" placeholder="Ваше сообщение..."></textarea>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
    <div class="layout_positioner">
        <header>
            <div class="header_menu">
@@ -41,7 +58,7 @@
                </div>
            </div>
            <div class="header_content">
-               <div class="header_logo"></div>
+               <a href="index.html" class="header_logo"></a>
                <div class="header_contacts">
                    <div class="header_contacts_numbers">
                        <i class="icon hc_numbers_icon"></i>
@@ -50,21 +67,6 @@
                    <div class="header_contacts_mail">
                        <i class="icon hc_mail_icon"></i>
                        <a href="#messageModal" data-toggle="modal">Написать сообщение</a>
-                   </div>
-                   <div class="modal" id="messageModal">
-                       <div class="modal-header">
-                           <button class="close" data-dismiss="modal">×</button>
-                           <h3>Отправьте нам сообщение</h3>
-                       </div>
-                       <div class="modal-body">
-                           <form class="well">
-                               <input type="text" class="span3" placeholder="Ваше имя">
-                               <div></div>
-                               <textarea class="input-xlarge" rows="8" cols="64" placeholder="Ваше сообщение..."></textarea>
-                               <div></div>
-                               <button type="submit" class="btn btn-primary">Отправить</button>
-                           </form>
-                       </div>
                    </div>
                    <div class="header_contacts_icq">
                        <i class="icon hc_icq_icon"></i>
@@ -88,20 +90,10 @@
                <div class="main_leftmenu_categories">
                    <div class="accordion" id="accordion">
                        <div class="accordion-group">
-                           <div class="accordion-heading">
-                               <a class="accordion-toggle" data-toggle="collapse" href="#">Автомодели</a>
-                           </div>
-                           <div class="accordion-body collapse" style="height: 0px;">
-                               <div class="accordion-inner"></div>
-                           </div>
+                           <a class="accordion-toggle" data-toggle="collapse" href="#">Автомодели</a>
                        </div>
                        <div class="accordion-group">
-                           <div class="accordion-heading">
-                               <a class="accordion-toggle" data-toggle="collapse" href="#">Самолеты</a>
-                           </div>
-                           <div class="accordion-body collapse" style="height: 0px;">
-                               <div class="accordion-inner"></div>
-                           </div>
+                           <a class="accordion-toggle" data-toggle="collapse" href="#">Самолеты</a>
                        </div>
                        <div class="accordion-group">
                            <div class="accordion-heading">
@@ -139,60 +131,25 @@
                            </div>
                        </div>
                        <div class="accordion-group">
-                           <div class="accordion-heading">
-                               <a class="accordion-toggle" data-toggle="collapse" href="#">Аккумуляторы, кабели</a>
-                           </div>
-                           <div class="accordion-body collapse" style="height: 0px;">
-                               <div class="accordion-inner"></div>
-                           </div>
+                           <a class="accordion-toggle" data-toggle="collapse" href="#">Аккумуляторы, кабели</a>
                        </div>
                        <div class="accordion-group">
-                           <div class="accordion-heading">
-                               <a class="accordion-toggle" data-toggle="collapse" href="#">Аппаратура</a>
-                           </div>
-                           <div class="accordion-body collapse" style="height: 0px;">
-                               <div class="accordion-inner"></div>
-                           </div>
+                           <a class="accordion-toggle" data-toggle="collapse" href="#">Аппаратура</a>
                        </div>
                        <div class="accordion-group">
-                           <div class="accordion-heading">
-                               <a class="accordion-toggle" data-toggle="collapse" href="#">Инструмент, материалы</a>
-                           </div>
-                           <div class="accordion-body collapse" style="height: 0px;">
-                               <div class="accordion-inner"></div>
-                           </div>
+                           <a class="accordion-toggle" data-toggle="collapse" href="#">Инструмент, материалы</a>
                        </div>
                        <div class="accordion-group">
-                           <div class="accordion-heading">
-                               <a class="accordion-toggle" data-toggle="collapse" href="#">Винты, крепеж, клей</a>
-                           </div>
-                           <div class="accordion-body collapse" style="height: 0px;">
-                               <div class="accordion-inner"></div>
-                           </div>
+                           <a class="accordion-toggle" data-toggle="collapse" href="#">Винты, крепеж, клей</a>
                        </div>
                        <div class="accordion-group">
-                           <div class="accordion-heading">
-                               <a class="accordion-toggle" data-toggle="collapse" href="#">Двигатели ДВС</a>
-                           </div>
-                           <div class="accordion-body collapse" style="height: 0px;">
-                               <div class="accordion-inner"></div>
-                           </div>
+                           <a class="accordion-toggle" data-toggle="collapse" href="#">Двигатели ДВС</a>
                        </div>
                        <div class="accordion-group">
-                           <div class="accordion-heading">
-                               <a class="accordion-toggle" data-toggle="collapse" href="#">Электродвигатели</a>
-                           </div>
-                           <div class="accordion-body collapse" style="height: 0px;">
-                               <div class="accordion-inner"></div>
-                           </div>
+                           <a class="accordion-toggle" data-toggle="collapse" href="#">Электродвигатели</a>
                        </div>
                        <div class="accordion-group">
-                           <div class="accordion-heading">
-                               <a class="accordion-toggle" data-toggle="collapse" href="#">Катера, яхты</a>
-                           </div>
-                           <div class="accordion-body collapse" style="height: 0px;">
-                               <div class="accordion-inner"></div>
-                           </div>
+                           <a class="accordion-toggle" data-toggle="collapse" href="#">Катера, яхты</a>
                        </div>
                    </div>
                </div>
@@ -238,13 +195,13 @@
                    <div class="mcontent_header_categories clearfix">
                        <div class="show_categories">показать:</div>
                        <div class="categories">
-                           <div class="category automodels">автомодели</div>
-                           <div class="category airplanes">самолеты</div>
-                           <div class="category helicopters">вертолеты</div>
-                           <div class="category battery_and_cabels">аккумуляторы, кабели</div>
-                           <div class="category apparatus">аппаратура</div>
-                           <div class="category instruments_and_materials">инструмент, материалы</div>
-                           <div class="category fasteners">винты, крепеж, клей</div>
+                           <div class="category">автомодели</div>
+                           <div class="category">самолеты</div>
+                           <div class="category">вертолеты</div>
+                           <div class="category">аккумуляторы, кабели</div>
+                           <div class="category">аппаратура</div>
+                           <div class="category">инструмент, материалы</div>
+                           <div class="category">винты, крепеж, клей</div>
                            <div class="plus_category"></div>
                        </div>
                    </div>
@@ -262,7 +219,7 @@
                </div>
                <div class="main_goods">
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT">
                            <img src="images/model1.png">
                            <div class="good_price">18 480 р.</div>
                        </div>
@@ -271,7 +228,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="Кордовая модель-копия PT-19 Profile Control Line 36 ARF">
                            <img src="images/model2.png">
                            <div class="good_price">5 712 р.</div>
                        </div>
@@ -280,7 +237,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="Электрический мини-вертолет HM 60#B">
                            <img src="images/model3.png">
                            <div class="good_price">18 240 р.</div>
                        </div>
@@ -289,7 +246,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT">
                            <img src="images/model1.png">
                            <div class="good_price">18 480 р.</div>
                        </div>
@@ -298,7 +255,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="Электрический мини-вертолет HM 60#B">
                            <img src="images/model3.png">
                            <div class="good_price">18 240 р.</div>
                        </div>
@@ -307,7 +264,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="Кордовая модель-копия PT-19 Profile Control Line 36 ARF">
                            <img src="images/model2.png">
                            <div class="good_price">5 712 р.</div>
                        </div>
@@ -316,7 +273,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="Электрический мини-вертолет HM 60#B">
                            <img src="images/model3.png">
                            <div class="good_price">18 240 р.</div>
                        </div>
@@ -325,7 +282,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="Кордовая модель-копия PT-19 Profile Control Line 36 ARF">
                            <img src="images/model2.png">
                            <div class="good_price">5 712 р.</div>
                        </div>
@@ -334,7 +291,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT">
                            <img src="images/model1.png">
                            <div class="good_price">18 480 р.</div>
                        </div>
@@ -343,7 +300,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT">
                            <img src="images/model1.png">
                            <div class="good_price">18 480 р.</div>
                        </div>
@@ -352,7 +309,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="Электрический мини-вертолет HM 60#B">
                            <img src="images/model3.png">
                            <div class="good_price">18 240 р.</div>
                        </div>
@@ -361,7 +318,7 @@
                        </div>
                    </div>
                    <div class="main_goods_element">
-                       <div class="goods_element_image">
+                       <div class="goods_element_image" rel="tooltip" title="Кордовая модель-копия PT-19 Profile Control Line 36 ARF">
                            <img src="images/model2.png">
                            <div class="good_price">5 712 р.</div>
                        </div>
@@ -458,7 +415,7 @@
            </div>
        </footer>
    </div>
-<script src="jquery-2.2.4.min.js"></script>
+<script src="js/jquery-2.2.4.min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
