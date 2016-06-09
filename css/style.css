@@ -197,11 +197,11 @@ div.modal.in {
     margin-right: 5px;
     background: url("../images/list_style_image.png") no-repeat 50% 50%;
 }
-.accordion-group {
+.accordion > li {
     margin-bottom: 2px;
     background-color: #f3f2f0;
 }
-.accordion-group > a,
+.accordion > li > a,
 .accordion-heading a {
     display: block;
     height: 32px;
@@ -227,12 +227,12 @@ div.modal.in {
 .accordion-heading a.pointed {
     color: #fff;
 }
-.accordion-group:hover > a,
+.accordion > li:hover > a,
 .accordion-group:hover .accordion-heading {
     background-color: #ed6d3b;
 }
-.accordion-group:hover > a,
-.accordion-group:hover .accordion-heading a {
+.accordion > li:hover > a,
+.accordion-group:hover > div > a {
     color: #fff;
 }
 .main_leftmenu_news {
