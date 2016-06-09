@@ -28,6 +28,7 @@ thead th {
     font-weight: bold;
     color: #665950;
     cursor: pointer;
+    -webkit-user-select: none;
 }
 .table_col_cost {
     text-align: center;

@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/order-style.css">
-    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
 </head>
 <body>
     <div class="modal fade" id="messageModal">
@@ -90,14 +90,14 @@
         <div class="main clearfix">
             <aside class="main_leftmenu">
                 <div class="main_leftmenu_categories">
-                    <div class="accordion" id="accordion">
-                        <div class="accordion-group">
-                            <a class="accordion-toggle" data-toggle="collapse" href="#">Автомодели</a>
-                        </div>
-                        <div class="accordion-group">
-                            <a class="accordion-toggle" data-toggle="collapse" href="#">Самолеты</a>
-                        </div>
-                        <div class="accordion-group">
+                    <menu class="accordion" id="accordion">
+                        <li>
+                            <a href="#">Автомодели</a>
+                        </li>
+                        <li>
+                            <a href="#">Самолеты</a>
+                        </li>
+                        <li class="accordion-group">
                             <div class="accordion-heading">
                                 <a class="pointed accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse">Вертолеты</a>
                             </div>
@@ -131,29 +131,29 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-group">
-                            <a class="accordion-toggle" data-toggle="collapse" href="#">Аккумуляторы, кабели</a>
-                        </div>
-                        <div class="accordion-group">
-                            <a class="accordion-toggle" data-toggle="collapse" href="#">Аппаратура</a>
-                        </div>
-                        <div class="accordion-group">
-                            <a class="accordion-toggle" data-toggle="collapse" href="#">Инструмент, материалы</a>
-                        </div>
-                        <div class="accordion-group">
-                            <a class="accordion-toggle" data-toggle="collapse" href="#">Винты, крепеж, клей</a>
-                        </div>
-                        <div class="accordion-group">
-                            <a class="accordion-toggle" data-toggle="collapse" href="#">Двигатели ДВС</a>
-                        </div>
-                        <div class="accordion-group">
-                            <a class="accordion-toggle" data-toggle="collapse" href="#">Электродвигатели</a>
-                        </div>
-                        <div class="accordion-group">
-                            <a class="accordion-toggle" data-toggle="collapse" href="#">Катера, яхты</a>
-                        </div>
-                    </div>
+                        </li>
+                        <li>
+                            <a href="#">Аккумуляторы, кабели</a>
+                        </li>
+                        <li>
+                            <a href="#">Аппаратура</a>
+                        </li>
+                        <li>
+                            <a href="#">Инструмент, материалы</a>
+                        </li>
+                        <li>
+                            <a href="#">Винты, крепеж, клей</a>
+                        </li>
+                        <li>
+                            <a href="#">Двигатели ДВС</a>
+                        </li>
+                        <li>
+                            <a href="#">Электродвигатели</a>
+                        </li>
+                        <li>
+                            <a href="#">Катера, яхты</a>
+                        </li>
+                    </menu>
                 </div>
                 <div class="main_leftmenu_news">
                     <div class="leftmenu_news_element">
@@ -295,15 +295,9 @@
         </footer>
     </div>
 <script src="js/jquery-2.2.4.min.js"></script>
-<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-<script src="js/moment/moment-with-locales.min.js"></script>
-<script src="bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker1').datetimepicker(
-                {pickTime: false, language: 'ru'}
-        );
-    });
-</script>
+<script src="vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="vendor/bootstrap-datetimepicker/moment/moment-with-locales.min.js"></script>
+<script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/js-order.js"></script>
 </body>
 </html>

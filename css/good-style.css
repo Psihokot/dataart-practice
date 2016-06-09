@@ -7,12 +7,18 @@
     display: inline-block;
     width: 50%;
 }
-.top_left_carousel .thumbnail {
-    height: 247px;
+.carousel-inner .thumbnail {
+    height: 250px;
+}
+.carousel-control {
+    height: 250px;
+}
+.top_left_thumbnails .thumbnail {
+    height: 80px;
     margin-bottom: 0;
 }
 .top_left_carousel {
-    margin-bottom: 20px;
+
 }
 .top_left_thumbnails .thumbnail {
     margin-bottom: 0;
