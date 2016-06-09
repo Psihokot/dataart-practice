@@ -177,7 +177,7 @@ div.modal.in {
     height: 15px;
     background: url("../images/personal_account.png") no-repeat 50% 50%;
 }
-.header_personal_account a {
+.header_personal a {
     color: #da501a;
 }
 
