@@ -196,34 +196,30 @@
                     </div>
                 </div>
                 <h2></h2>
-                <form class="form-horizontal" method="post" enctype="multipart/form-data">
-                    <legend>Оформление заказа</legend>
+                <form id="regForm" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <h2>Оформление заказа</h2>
                     <div class="control-group">
-                        <label class="control-label" for="inputName">Ваше имя</label>
+                        <label class="control-label" for="inputName">Ваше имя<span class="important"> *</span></label>
                         <div class="controls">
-                            <input type="text" id="inputName" name="orderName" placeholder="Имя">
-                            <span class="help-inline">Пожалуйста, укажите Ваше имя</span>
+                            <input type="text" id="inputName" name="orderName" placeholder="Имя" size="60">
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="inputSurname">Ваша фамилия</label>
                         <div class="controls">
-                            <input type="text" id="inputSurname" name="orderSurname" placeholder="Фамилия">
-                            <span class="help-inline">Пожалуйста, укажите Вашу фамилию</span>
+                            <input type="text" id="inputSurname" name="orderSurname" placeholder="Фамилия" size="60">
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="inputEmail">Email</label>
+                        <label class="control-label" for="inputEmail">Email<span class="important"> *</span></label>
                         <div class="controls">
-                            <input type="text" id="inputEmail" name="orderEmail" placeholder="Email">
-                            <span class="help-inline">Пожалуйста, укажите Ваш Email</span>
+                            <input type="text" id="inputEmail" name="orderEmail" placeholder="Email" size="60">
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="inputAdress">Адрес доставки</label>
+                        <label class="control-label" for="inputAdress">Адрес доставки<span class="important"> *</span></label>
                         <div class="controls">
-                            <input type="text" id="inputAdress" name="orderAdress" placeholder="Адрес доставки" size="70">
-                            <span class="help-inline">Пожалуйста, укажите адрес доставки</span>
+                            <input type="text" id="inputAdress" name="orderAdress" placeholder="Адрес доставки" size="60">
                         </div>
                     </div>
                     <div class="control-group">
@@ -247,11 +243,12 @@
                     <div class="control-group">
                         <label class="control-label" for="inputComments">Примечания</label>
                         <div class="controls">
-                            <textarea type="text" rows="6" cols="70" id="inputComments" name="orderComment" placeholder="Примечания"></textarea>
+                            <textarea rows="6" cols="62" id="inputComments" name="orderComment" placeholder="Примечания"></textarea>
                         </div>
                     </div>
-                    <button class="btn btn-primary">Отправить</button>
                 </form>
+                <p><span class="important">*</span> - Поля, обязательные для заполнения</p>
+                <button id="send" class="btn btn-primary">Отправить</button>
             </div>
         </div>
         <div class="main_bottom_menu">
@@ -295,6 +292,7 @@
         </footer>
     </div>
 <script src="js/jquery-2.2.4.min.js"></script>
+<script src="vendor/notify.min.js"></script>
 <script src="vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <script src="vendor/bootstrap-datetimepicker/moment/moment-with-locales.min.js"></script>
 <script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
