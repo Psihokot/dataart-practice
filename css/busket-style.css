@@ -10,6 +10,9 @@ thead th {
     font-size: 16px;
     font-weight: bold;
 }
+table input {
+    text-align: center;
+}
 .table_col_good {
     width: 300px;
 }
@@ -17,7 +20,8 @@ thead th {
     text-align: center;
     width: 110px;
 }
-.table_col_numberof {
+.table_col_numberof,
+.col_total_numberof {
     text-align: center;
 }
 .table_numberof_minus,
