@@ -1,27 +1,33 @@
 $(function() {
-    var busketCounter = 0;
+    var basketCounter = 0;
     $(".buy_button").on("click", function() {
-        var busketLink = $(".header_personal_basket > span");
-        var busketLinkText = 'В вашей корзине';
-        var busketFinalWord = ' товаров';
+        var basketFinalWord = '';
 
-        ++busketCounter;
-        $(busketLink).html(function() {
-            switch (busketCounter) {
+        ++basketCounter;
+        $(".basket_link > span").text(function() {
+            switch (basketCounter) {
                 case 1:
-                    busketFinalWord = ' товар';
+                    basketFinalWord = ' товар';
                     break;
                 case 2:
                 case 3:
                 case 4:
-                    busketFinalWord = ' товара';
+                    basketFinalWord = ' товара';
                     break;
                 default:
-                    busketFinalWord = ' товаров';
+                    basketFinalWord = ' товаров';
                     break;
             }
-            var busketLinkHtml = '<a href=busket.html>' + busketLinkText + ' ' + busketCounter + busketFinalWord + '</a>';
-            return busketLinkHtml;
+
+            return (basketCounter + basketFinalWord);
         });
+        $(".basket_link").removeClass("disabled");
     });
+    
+    // $(".thumbnail").on("click", function(event) {
+    //     var target = event.target;
+    //
+    //     $(target).parents(".item").addClass("active");
+    //     console.log($(target).parents(".item"));
+    // });
 });

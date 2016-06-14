@@ -5,16 +5,24 @@
 .content_top_left {
     float: left;
     display: inline-block;
-    width: 50%;
+    width: 330px;
 }
-.carousel-inner .thumbnail {
+.carousel_inner_prev {
+    display: block;
     height: 250px;
+    margin-bottom: 20px;
 }
 .carousel-control {
     height: 250px;
+    line-height: 250px;
+    vertical-align: middle;
+}
+#littleCarousel .carousel-control {
+    width: 30px;
+    height: 85px;
 }
 .top_left_thumbnails .thumbnail {
-    height: 80px;
+    /*height: 80px;*/
     margin-bottom: 0;
 }
 .top_left_carousel {
@@ -27,10 +35,10 @@
     position: relative;
     display: inline-block;
     clear: both;
-    width: 314px;
+    width: 313px;
     margin-left: 15px;
 }
-.main_content_top .carousel {
+.content_top_left > .carousel {
     width: 330px;
 }
 .top_left_thumbnails ul {
@@ -38,8 +46,7 @@
 }
 .top_left_thumbnails li {
     display: inline-block;
-    width: 30%;
-    margin: 0 5px;
+    width: 110px;
 }
 .top_right_title {
     font-size: 22px;

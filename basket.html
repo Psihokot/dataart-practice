@@ -5,7 +5,7 @@
     <title>Корзина</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/busket-style.css">
+    <link rel="stylesheet" href="css/basket-style.css">
     <link rel="stylesheet" href="vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -77,7 +77,7 @@
                 <div class="header_personal">
                     <div class="header_personal_basket">
                         <i class="icon hp_basket_icon"></i>
-                        <span>В вашей корзине пусто</span>
+                        <a href="basket.html" class="basket_link disabled">В вашей корзине <span>пусто</span></a>
                     </div>
                     <div class="header_personal_account">
                         <i class="icon hp_account_icon"></i>
@@ -88,72 +88,70 @@
         </header>
         <div class="main clearfix">
             <aside class="main_leftmenu">
-                <div class="main_leftmenu_categories">
-                    <menu class="accordion" id="accordion">
-                        <li>
-                            <a href="#">Автомодели</a>
-                        </li>
-                        <li>
-                            <a href="#">Самолеты</a>
-                        </li>
-                        <li class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="pointed accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse">Вертолеты</a>
+                <menu class="main_leftmenu_categories" id="accordion">
+                    <li>
+                        <a href="#">Автомодели</a>
+                    </li>
+                    <li>
+                        <a href="#">Самолеты</a>
+                    </li>
+                    <li class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="pointed accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse">Вертолеты</a>
+                        </div>
+                        <div id="collapse" class="accordion-body collapse in" aria-expanded="true">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            Для начинающих (Соосные)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            С электродвигателем
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            Вертолеты с ДВС
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            Вертолеты Mikado
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div id="collapse" class="accordion-body collapse in" aria-expanded="true">
-                                <div class="accordion-inner">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon leftmenu_sublist_icon"></i>
-                                                Для начинающих (Соосные)
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon leftmenu_sublist_icon"></i>
-                                                С электродвигателем
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon leftmenu_sublist_icon"></i>
-                                                Вертолеты с ДВС
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon leftmenu_sublist_icon"></i>
-                                                Вертолеты Mikado
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">Аккумуляторы, кабели</a>
-                        </li>
-                        <li>
-                            <a href="#">Аппаратура</a>
-                        </li>
-                        <li>
-                            <a href="#">Инструмент, материалы</a>
-                        </li>
-                        <li>
-                            <a href="#">Винты, крепеж, клей</a>
-                        </li>
-                        <li>
-                            <a href="#">Двигатели ДВС</a>
-                        </li>
-                        <li>
-                            <a href="#">Электродвигатели</a>
-                        </li>
-                        <li>
-                            <a href="#">Катера, яхты</a>
-                        </li>
-                    </menu>
-                </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Аккумуляторы, кабели</a>
+                    </li>
+                    <li>
+                        <a href="#">Аппаратура</a>
+                    </li>
+                    <li>
+                        <a href="#">Инструмент, материалы</a>
+                    </li>
+                    <li>
+                        <a href="#">Винты, крепеж, клей</a>
+                    </li>
+                    <li>
+                        <a href="#">Двигатели ДВС</a>
+                    </li>
+                    <li>
+                        <a href="#">Электродвигатели</a>
+                    </li>
+                    <li>
+                        <a href="#">Катера, яхты</a>
+                    </li>
+                </menu>
                 <div class="main_leftmenu_news">
                     <div class="leftmenu_news_element">
                         <div class="news_element_date">01.01.2016</div>
@@ -194,7 +192,6 @@
                         <span>Корзина</span>
                     </div>
                 </div>
-                <h2></h2>
                 <form method="post">
                     <table class="main_content_table table table-hover">
                         <thead>
@@ -297,6 +294,6 @@
     </div>
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-<script src="js/js-busket.js"></script>
+<script src="js/js-basket.js"></script>
 </body>
 </html>
