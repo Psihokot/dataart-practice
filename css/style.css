@@ -162,6 +162,11 @@ div.modal.in {
     color: #727272;
     margin-top: 5px;
 }
+.basket_link.disabled {
+    text-decoration: none;
+    color: #727272;
+    cursor: text;
+}
 .hp_basket_icon {
     margin-right: 8px;
     width: 15px;
@@ -197,11 +202,11 @@ div.modal.in {
     margin-right: 5px;
     background: url("../images/list_style_image.png") no-repeat 50% 50%;
 }
-.accordion > li {
+menu > li {
     margin-bottom: 2px;
     background-color: #f3f2f0;
 }
-.accordion > li > a,
+menu > li > a,
 .accordion-heading a {
     display: block;
     height: 32px;
@@ -227,11 +232,11 @@ div.modal.in {
 .accordion-heading a.pointed {
     color: #fff;
 }
-.accordion > li:hover > a,
+.main_leftmenu_categories > li:hover > a,
 .accordion-group:hover .accordion-heading {
     background-color: #ed6d3b;
 }
-.accordion > li:hover > a,
+.main_leftmenu_categories > li:hover > a,
 .accordion-group:hover > div > a {
     color: #fff;
 }
@@ -322,8 +327,9 @@ div.modal.in {
 }
 .categories {
    padding: 8px 0 4px 0;
+    margin-bottom: 0;
 }
-.category {
+.categories  li {
     display: inline-block;
     margin-bottom: 6px;
     padding: 2px 6px;
@@ -331,7 +337,7 @@ div.modal.in {
     cursor: pointer;
     background: linear-gradient(to top, #d9d9d9, #fff);
 }
-.plus_category {
+li.plus_category {
     display: inline-block;
     margin: 10px 0 0 4px;
     width: 12px;

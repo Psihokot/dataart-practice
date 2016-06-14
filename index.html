@@ -77,7 +77,7 @@
                <div class="header_personal">
                    <div class="header_personal_basket">
                        <i class="icon hp_basket_icon"></i>
-                       <span>В вашей корзине пусто</span>
+                       <a href="basket.html" class="basket_link disabled">В вашей корзине <span>пусто</span></a>
                    </div>
                    <div class="header_personal_account">
                        <i class="icon hp_account_icon"></i>
@@ -88,72 +88,70 @@
        </header>
        <div class="main clearfix">
            <aside class="main_leftmenu">
-               <div class="main_leftmenu_categories">
-                   <menu class="accordion" id="accordion">
-                       <li>
-                           <a href="#">Автомодели</a>
-                       </li>
-                       <li>
-                           <a href="#">Самолеты</a>
-                       </li>
-                       <li class="accordion-group">
-                           <div class="accordion-heading">
-                               <a class="pointed accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse">Вертолеты</a>
-                           </div>
-                           <div id="collapse" class="accordion-body collapse in" aria-expanded="true">
-                               <div class="accordion-inner">
-                                   <ul>
-                                       <li>
-                                           <a href="#">
-                                               <i class="icon leftmenu_sublist_icon"></i>
-                                               Для начинающих (Соосные)
-                                           </a>
-                                       </li>
-                                       <li>
-                                           <a href="#">
-                                               <i class="icon leftmenu_sublist_icon"></i>
-                                               С электродвигателем
+               <menu class="main_leftmenu_categories" id="accordion">
+                   <li>
+                       <a href="#">Автомодели</a>
+                   </li>
+                   <li>
+                       <a href="#">Самолеты</a>
+                   </li>
+                   <li class="accordion-group">
+                       <div class="accordion-heading">
+                           <a class="pointed accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse">Вертолеты</a>
+                       </div>
+                       <div id="collapse" class="accordion-body collapse in" aria-expanded="true">
+                           <div class="accordion-inner">
+                               <ul>
+                                   <li>
+                                       <a href="#">
+                                           <i class="icon leftmenu_sublist_icon"></i>
+                                           Для начинающих (Соосные)
                                        </a>
-                                       </li>
-                                       <li>
-                                           <a href="#">
-                                               <i class="icon leftmenu_sublist_icon"></i>
-                                               Вертолеты с ДВС
-                                           </a>
-                                       </li>
-                                       <li>
-                                           <a href="#">
-                                               <i class="icon leftmenu_sublist_icon"></i>
-                                               Вертолеты Mikado
-                                           </a>
-                                       </li>
-                                   </ul>
-                               </div>
+                                   </li>
+                                   <li>
+                                       <a href="#">
+                                           <i class="icon leftmenu_sublist_icon"></i>
+                                           С электродвигателем
+                                   </a>
+                                   </li>
+                                   <li>
+                                       <a href="#">
+                                           <i class="icon leftmenu_sublist_icon"></i>
+                                           Вертолеты с ДВС
+                                       </a>
+                                   </li>
+                                   <li>
+                                       <a href="#">
+                                           <i class="icon leftmenu_sublist_icon"></i>
+                                           Вертолеты Mikado
+                                       </a>
+                                   </li>
+                               </ul>
                            </div>
-                       </li>
-                       <li>
-                           <a href="#">Аккумуляторы, кабели</a>
-                       </li>
-                       <li>
-                           <a href="#">Аппаратура</a>
-                       </li>
-                       <li>
-                           <a href="#">Инструмент, материалы</a>
-                       </li>
-                       <li>
-                           <a href="#">Винты, крепеж, клей</a>
-                       </li>
-                       <li>
-                           <a href="#">Двигатели ДВС</a>
-                       </li>
-                       <li>
-                           <a href="#">Электродвигатели</a>
-                       </li>
-                       <li>
-                           <a href="#">Катера, яхты</a>
-                       </li>
-                   </menu>
-               </div>
+                       </div>
+                   </li>
+                   <li>
+                       <a href="#">Аккумуляторы, кабели</a>
+                   </li>
+                   <li>
+                       <a href="#">Аппаратура</a>
+                   </li>
+                   <li>
+                       <a href="#">Инструмент, материалы</a>
+                   </li>
+                   <li>
+                       <a href="#">Винты, крепеж, клей</a>
+                   </li>
+                   <li>
+                       <a href="#">Двигатели ДВС</a>
+                   </li>
+                   <li>
+                       <a href="#">Электродвигатели</a>
+                   </li>
+                   <li>
+                       <a href="#">Катера, яхты</a>
+                   </li>
+               </menu>
                <div class="main_leftmenu_news">
                    <div class="leftmenu_news_element">
                        <div class="news_element_date">01.01.2016</div>
@@ -195,24 +193,24 @@
                    </div>
                    <div class="mcontent_header_categories clearfix">
                        <div class="show_categories">показать:</div>
-                       <div class="categories">
-                           <div class="category">автомодели</div>
-                           <div class="category">самолеты</div>
-                           <div class="category">вертолеты</div>
-                           <div class="category">аккумуляторы, кабели</div>
-                           <div class="category">аппаратура</div>
-                           <div class="category">инструмент, материалы</div>
-                           <div class="category">винты, крепеж, клей</div>
-                           <div class="plus_category"></div>
-                       </div>
+                       <ul class="categories">
+                           <li>автомодели</li>
+                           <li>самолеты</li>
+                           <li>вертолеты</li>
+                           <li>аккумуляторы, кабели</li>
+                           <li>аппаратура</li>
+                           <li>инструмент, материалы</li>
+                           <li>винты, крепеж, клей</li>
+                           <li class="plus_category"></li>
+                       </ul>
                    </div>
                    <div class="mcontent_header_sort">
                        <span>сортировать по:</span>
-                       <div class="sort_filter by_date active">
+                       <div class="sort_filter active">
                            <span>дате добавления</span>
                            <div class="navigation_arrow_down"></div>
                        </div>
-                       <div class="sort_filter by_cost">
+                       <div class="sort_filter">
                            <span>стоимости</span>
                            <div class="navigation_arrow_up"></div>
                        </div>
@@ -391,11 +389,11 @@
                </div>
                <div class="main_about">
                    <h1>О компании</h1>
-                   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                       officia deserunt mollit anim id est laborum.</span>
+                       officia deserunt mollit anim id est laborum.</p>
                    <a href="#">читать дальше</a>
                </div>
            </div>

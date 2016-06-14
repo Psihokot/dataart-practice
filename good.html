@@ -78,7 +78,7 @@
                 <div class="header_personal">
                     <div class="header_personal_basket">
                         <i class="icon hp_basket_icon"></i>
-                        <span>В вашей корзине пусто</span>
+                        <a href="basket.html" class="basket_link disabled">В вашей корзине <span>пусто</span></a>
                     </div>
                     <div class="header_personal_account">
                         <i class="icon hp_account_icon"></i>
@@ -89,72 +89,70 @@
         </header>
         <div class="main clearfix">
             <aside class="main_leftmenu">
-                <div class="main_leftmenu_categories">
-                    <menu class="accordion" id="accordion">
-                        <li>
-                            <a href="#">Автомодели</a>
-                        </li>
-                        <li>
-                            <a href="#">Самолеты</a>
-                        </li>
-                        <li class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="pointed accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse">Вертолеты</a>
+                <menu class="main_leftmenu_categories" id="accordion">
+                    <li>
+                        <a href="#">Автомодели</a>
+                    </li>
+                    <li>
+                        <a href="#">Самолеты</a>
+                    </li>
+                    <li class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="pointed accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse">Вертолеты</a>
+                        </div>
+                        <div id="collapse" class="accordion-body collapse in" aria-expanded="true">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            Для начинающих (Соосные)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            С электродвигателем
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            Вертолеты с ДВС
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon leftmenu_sublist_icon"></i>
+                                            Вертолеты Mikado
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div id="collapse" class="accordion-body collapse in" aria-expanded="true">
-                                <div class="accordion-inner">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon leftmenu_sublist_icon"></i>
-                                                Для начинающих (Соосные)
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon leftmenu_sublist_icon"></i>
-                                                С электродвигателем
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon leftmenu_sublist_icon"></i>
-                                                Вертолеты с ДВС
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon leftmenu_sublist_icon"></i>
-                                                Вертолеты Mikado
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">Аккумуляторы, кабели</a>
-                        </li>
-                        <li>
-                            <a href="#">Аппаратура</a>
-                        </li>
-                        <li>
-                            <a href="#">Инструмент, материалы</a>
-                        </li>
-                        <li>
-                            <a href="#">Винты, крепеж, клей</a>
-                        </li>
-                        <li>
-                            <a href="#">Двигатели ДВС</a>
-                        </li>
-                        <li>
-                            <a href="#">Электродвигатели</a>
-                        </li>
-                        <li>
-                            <a href="#">Катера, яхты</a>
-                        </li>
-                    </menu>
-                </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Аккумуляторы, кабели</a>
+                    </li>
+                    <li>
+                        <a href="#">Аппаратура</a>
+                    </li>
+                    <li>
+                        <a href="#">Инструмент, материалы</a>
+                    </li>
+                    <li>
+                        <a href="#">Винты, крепеж, клей</a>
+                    </li>
+                    <li>
+                        <a href="#">Двигатели ДВС</a>
+                    </li>
+                    <li>
+                        <a href="#">Электродвигатели</a>
+                    </li>
+                    <li>
+                        <a href="#">Катера, яхты</a>
+                    </li>
+                </menu>
                 <div class="main_leftmenu_news">
                     <div class="leftmenu_news_element">
                         <div class="news_element_date">01.01.2016</div>
@@ -206,46 +204,111 @@
                         <div id="Carousel" class="top_left_carousel carousel">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <a href="#" data-toggle="modal" class="thumbnail">
+                                    <a href="#" data-toggle="modal" class="carousel_inner_prev">
                                         <img src="images/model1/big1.png">
                                     </a>
                                 </div>
                                 <div class="item">
-                                    <a href="#" data-toggle="modal" class="thumbnail">
+                                    <a href="#" data-toggle="modal" class="carousel_inner_prev">
                                         <img src="images/model1/big2.png">
                                     </a>
                                 </div>
                                 <div class="item">
-                                    <a href="#" data-toggle="modal" class="thumbnail">
+                                    <a href="#" data-toggle="modal" class="carousel_inner_prev">
                                         <img src="images/model1/big3.png">
                                     </a>
                                 </div>
                                 <div class="item">
-                                    <a href="#" data-toggle="modal" class="thumbnail">
+                                    <a href="#" data-toggle="modal" class="carousel_inner_prev">
                                         <img src="images/model1/big4.png">
                                     </a>
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#Carousel" data-slide="prev">‹</a>
                             <a class="right carousel-control" href="#Carousel" data-slide="next">›</a>
-                            <div class="top_left_thumbnails">
-                                <ul>
-                                    <li>
-                                        <a class="thumbnail" href="#Carousel" data-slide-to="1">
-                                            <img src="images/model1/big2.png" alt>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="thumbnail" href="#Carousel" data-slide-to="2">
-                                            <img src="images/model1/big3.png">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="thumbnail" href="#Carousel" data-slide-to="3">
-                                            <img src="images/model1/big4.png">
-                                        </a>
-                                    </li>
-                                </ul>
+                        </div>
+                        <div class="top_left_thumbnails">
+                            <div id="littleCarousel" class="top_left_littlecarousel carousel" data-interval="false">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <ul>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="0">
+                                                    <img src="images/model1/big1.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="1">
+                                                    <img src="images/model1/big2.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="2">
+                                                    <img src="images/model1/big3.png">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="item">
+                                        <ul>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="1">
+                                                    <img src="images/model1/big2.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="2">
+                                                    <img src="images/model1/big3.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="3">
+                                                    <img src="images/model1/big4.png">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="item">
+                                        <ul>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="2">
+                                                    <img src="images/model1/big3.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="3">
+                                                    <img src="images/model1/big4.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="0">
+                                                    <img src="images/model1/big1.png">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="item">
+                                        <ul>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="3">
+                                                    <img src="images/model1/big4.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="0">
+                                                    <img src="images/model1/big1.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="thumbnail" href="#Carousel" data-slide-to="1">
+                                                    <img src="images/model1/big2.png">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#littleCarousel" data-slide="prev">‹</a>
+                                <a class="right carousel-control" href="#littleCarousel" data-slide="next">›</a>
                             </div>
                         </div>
                     </div>
@@ -306,10 +369,10 @@
                         <li class="active">
                             <a href="#description" data-toggle="tab">Описание</a>
                         </li>
-                        <li class>
+                        <li>
                             <a href="#specifications" data-toggle="tab">Технические характеристики</a>
                         </li>
-                        <li class>
+                        <li>
                             <a href="#comments" data-toggle="tab">Отзывы</a>
                         </li>
                     </ul>
@@ -326,20 +389,20 @@
                             <p></p>
                         </div>
                         <div class="tab-pane" id="specifications">
-                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
                             quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
                             deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam
                             libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus,
                             omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum
                             necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur
-                            a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+                            a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
                         </div>
                         <div class="tab-pane" id="comments">
-                            Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                            <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque
                             nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
                             Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae
                             sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
-                            alias consequatur aut perferendis doloribus asperiores repellat.
+                            alias consequatur aut perferendis doloribus asperiores repellat.</p>
                         </div>
                     </div>
                 </div>
