@@ -28,9 +28,6 @@ header, .main, .main_bottom_menu {
 .divider {
     margin: 10px 0 10px 0;
 }
-section:not(.active) {
-    display: none;
-}
 
                         /*CSS for header*/
 
