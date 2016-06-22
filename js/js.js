@@ -1,6 +1,7 @@
 $(function() {
     var templateHash = "main-index",
-        view = {};
+        view = {},
+        mainTemplate = $('.main_content');
     
     window.onhashchange = function() {
         var hash = location.hash;
@@ -9,42 +10,59 @@ $(function() {
             case "#":
             case "#main-index":
                 templateHash = "main-index";
-                loadPage(templateHash);
+                loadPage();
                 break;
             case "#main-good":
                 templateHash = "main-good";
-                loadPage(templateHash);
+                loadPage();
                 break;
             case "#main-basket":
                 templateHash = "main-basket";
-                loadPage(templateHash);
+                loadPage();
                 break;
             case "#main-order":
                 templateHash = "main-order";
-                loadPage(templateHash);
+                loadPage();
                 break;
             default:
                 templateHash = "main-index";
-                loadPage(templateHash);
+                loadPage();
                 break;
         }
     };
 
-    function loadTemplate() {
-        var str = $('#template').html();
-        var rendered = Mustache.render(str, view);
-        $('.main_content').html(rendered);
+    function loadTemplate(data) {
+        var rendered = Mustache.render(data, view);
+        mainTemplate.html(rendered);
         $.getScript("js/js-index.js");
-        $("#templates").html("");
     }
-    
-    function loadPage(templateHash) {
-        $("#templates").load("templates/" + templateHash + ".html", function(data) {
-            view.data = data;
-            loadTemplate();
+
+    function loadPage() {
+        mainTemplate.after("<div id='elem' style='display: none'></div>");
+        var elem = $("#elem");
+        elem.load("templates/" + templateHash + ".mustache", function(data) {
+            loadTemplate(data);
         });
+        elem.remove();
     }
-    
-    loadPage(templateHash);
-    
+
+    function getJSONData() {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'json/data.json', true);
+        xhr.send();
+        xhr.onreadystatechange = function() {
+
+            if (xhr.readyState != 4) return;
+
+            if (xhr.status != 200) {
+                alert(xhr.status + ': ' + xhr.statusText);
+            } else {
+                view.goods = JSON.parse(xhr.responseText);
+            }
+        };
+        xhr.onloadend = loadPage();
+    }
+
+    getJSONData();
 });

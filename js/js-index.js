@@ -4,6 +4,7 @@ $(function() {
     );
 
     var basketCounter = 0;
+
     $(".buy_button").on("click", function() {
         var basketFinalWord = '';
 
