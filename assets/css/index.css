@@ -567,3 +567,222 @@ footer a {
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
 }
+
+.main_content_top {
+    position: relative;
+    width: 658px;
+}
+.content_top_left {
+    float: left;
+    display: inline-block;
+    width: 330px;
+}
+.carousel_inner_prev {
+    display: block;
+    height: 250px;
+    margin-bottom: 20px;
+}
+.carousel-control {
+    height: 250px;
+    line-height: 250px;
+    vertical-align: middle;
+}
+#littleCarousel .carousel-control {
+    width: 30px;
+    height: 85px;
+}
+.top_left_thumbnails .thumbnail {
+    /*height: 80px;*/
+    margin-bottom: 0;
+}
+.top_left_carousel {
+
+}
+.top_left_thumbnails .thumbnail {
+    margin-bottom: 0;
+}
+.content_top_right {
+    position: relative;
+    display: inline-block;
+    clear: both;
+    width: 313px;
+    margin-left: 15px;
+}
+.content_top_left > .carousel {
+    width: 330px;
+}
+.top_left_thumbnails ul {
+    font-size: 0;
+}
+.top_left_thumbnails li {
+    display: inline-block;
+    width: 110px;
+}
+.top_right_title {
+    font-size: 22px;
+}
+.top_right_button {
+    width: 314px;
+    height: 76px;
+    padding: 10px;
+    margin: 0 auto;
+    background: linear-gradient(to top, #ea7a2f, #ff993e);
+    border: 1px solid #c36a20;
+    border-radius: 4px;
+}
+.top_right_button span {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+
+}
+.button_price {
+    display: inline-block;
+    width: 136px;
+    text-align: center;
+}
+.buy_button {
+    width: 150px;
+    height: 54px;
+    background: linear-gradient(to top, #d9d9d9, #f7f7f7);
+    border: 1px solid #c4943b;
+    border-radius: 4px;
+    color: #6e6e6e;
+    font-size: 30px;
+    font-weight: bold;
+}
+.share_to_friends {
+    display: inline-block;
+    color: #adadad;
+    font-size: 14px;
+}
+.top_right_share li,
+.top_right_share ul {
+    display: inline-block;
+}
+.top_right_share a {
+    display: block;
+}
+.top_right_share .icon {
+    width: 21px;
+    height: 21px;
+}
+.vk_icon {
+    background: url("../images/vk_icon.png") no-repeat;
+}
+.fb_icon {
+    background: url("../images/fb_icon.png") no-repeat;
+}
+.tweet_icon {
+    background: url("../images/tweeter_icon.png") no-repeat;
+}
+.top_right_links a {
+    color: #e27d55;
+}
+.right_links_list {
+    width: 13px;
+    height: 20px;
+    margin-right: 10px;
+    background: url("../images/list_style_image.png") no-repeat 50% 50%;
+}
+.main_content_description {
+    position: relative;
+    width: 658px;
+    height: 500px;
+    margin-top: 20px;
+    padding: 10px 20px 40px 20px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+}
+.main_content_description .nav-pills .active a,
+.main_content_description .nav-pills .active a:focus,
+.main_content_description .nav-pills .active a:hover {
+    background-color: #f3f2f0;
+    color: #000;
+}
+.main_content_description .nav-pills a {
+    color: #da501a;
+}
+
+.main_content .main_content_table {
+    width: 658px;
+}
+.main_content .main_content_table th,
+.main_content .main_content_table td {
+    vertical-align: middle;
+}
+thead th {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+table input {
+    text-align: center;
+}
+.table_col_good {
+    width: 300px;
+}
+.table_col_price {
+    text-align: center;
+    width: 110px;
+}
+.table_col_numberof,
+.col_total_numberof {
+    text-align: center;
+}
+.table_numberof_minus,
+.table_numberof_plus {
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #665950;
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+.table_col_cost {
+    text-align: center;
+    width: 95px;
+}
+.del_row {
+    width: 15px;
+    border: none !important;
+}
+.del_row_icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url("../images/remove.png") no-repeat 50% 50%;
+}
+.table_summary td {
+    font-size: 16px;
+    font-weight: bold;
+}
+.table-hover > tbody > .table_summary:hover {
+    background: none;
+}
+
+.main_content {
+    width: 658px;
+}
+.input-group {
+    width: 186px;
+    margin-left: 14px;
+}
+.main_content input[type="text"],
+.main_content textarea {
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.help-inline {
+    display: none;
+}
+.error .help-inline {
+    display: block;
+}
+.important {
+    color: #ff0000;
+}
