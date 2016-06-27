@@ -30,10 +30,10 @@
     </div>
 </div>
 <div class="main_goods">
-    {{#goods.good}}
+    {{#good}}
         <div class="main_goods_element">
             <div class="goods_element_image" rel="tooltip" title="{{title}}">
-                <a class="fancybox" rel="group" href="{{urlBigPic}}" title="{{title}}">
+                <a class="fancybox" rel="group" href="{{urlBigPic1}}" title="{{title}}">
                     <img src="{{urlPic}}">
                     <div class="good_price">{{price}}</div>
                 </a>
@@ -42,7 +42,7 @@
                 <a href="{{url}}">{{title}}</a>
             </div>
         </div>
-    {{/goods.good}}
+    {{/good}}
 </div>
 <div class="main_pages">
     <span>Страницы:</span>
