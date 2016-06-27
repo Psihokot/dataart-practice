@@ -620,6 +620,7 @@ footer a {
 }
 .top_right_title {
     font-size: 22px;
+    min-height: 62px;
 }
 .top_right_button {
     width: 314px;
