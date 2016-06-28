@@ -1,18 +1,26 @@
-var webpack = require("webpack");
+var webpack = require("webpack"),
+    path = require('path');
 
 module.exports = {
-    context: __dirname + '/assets/js',
+    context: path.join(__dirname, "assets", "js"),//__dirname + '/assets/js',
     entry: {
         home: "./home"
     },
     
     output: {
-        path: __dirname + "/public",
+        path: path.resolve(__dirname, "public"),//__dirname + "/public",
         filename: "index.js"
     },
 
+    watch: true,
+
+    watchOptions: {
+        aggregateTimeout: 300,
+        poll: 1000
+    },
+
     resolve: {
-        root: __dirname + '/vendor',
+        root: path.resolve(__dirname, "vendor"),//__dirname + '/vendor',
         moduleDirectories: ['node_modules'],
         extensions: ['', '.js']
     },
@@ -26,13 +34,13 @@ module.exports = {
         })
     ]
 };
-
-module.exports.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false,
-            drop_console: true,
-            unsafe: true
-        }
-    })
-);
+//
+// module.exports.plugins.push(
+//     new webpack.optimize.UglifyJsPlugin({
+//         compress: {
+//             warnings: false,
+//             drop_console: true,
+//             unsafe: true
+//         }
+//     })
+// );
