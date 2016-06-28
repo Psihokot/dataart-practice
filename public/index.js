@@ -54,8 +54,10 @@
 
 	/* WEBPACK VAR INJECTION */(function($, Mustache) {var index = __webpack_require__(4),
 	    good = __webpack_require__(7),
-	    basket = __webpack_require__(8),
-	    order = __webpack_require__(9);
+	    basket = __webpack_require__(9),
+	    order = __webpack_require__(10),
+	    basketCount = __webpack_require__(8),
+	    tableConstruct = __webpack_require__(13);
 
 	module.exports = function() {
 	    $(function () {
@@ -98,18 +100,34 @@
 	            loadPage();
 	        };
 
-	        function loadTemplate(data) {
-	            var rendered = Mustache.render(data, view);
-	            mainTemplate.html(rendered);
+	        function loadTemplate(template) {
 	            
+	            if (templateHash == "good") {
+	                var goodId = getGoodID() - 1;
+	                
+	                if (localStorage.getItem('good#' + getGoodID())) {       // чтобы не было обнуления количества товара
+	                    var goodView = JSON.parse(localStorage.getItem('good#' + getGoodID()));
+	                } else {
+	                    goodView = view.good[goodId];
+	                    goodView.numberOf = "0";
+	                }
+
+	                var rendered = Mustache.render(template, goodView);
+	                mainTemplate.html(rendered);
+	                localStorage.setItem('elementId', goodView.id);
+	                localStorage.setItem('good#' + goodView.id, JSON.stringify(goodView));
+	            } else {
+	                rendered = Mustache.render(template, view);
+	                mainTemplate.html(rendered);
+	            }
+
+	            basketCount();
 	            switch (templateHash) {
 	                case "index":
 	                    index();
 	                    break;
 	                case "good":
-	                    localStorage.setItem('elementId', getGoodID());
 	                    good();
-
 	                    break;
 	                case "basket":
 	                    basket();
@@ -128,6 +146,10 @@
 	                type: "GET",
 	                url: "../assets/templates/" + templateHash + ".mustache",
 	                success: function(data) {
+	                    
+	                    if (templateHash == 'basket') {
+	                        data = tableConstruct(data);
+	                    }
 	                    loadTemplate(data);
 	                },
 	                error: function() {
@@ -154,11 +176,6 @@
 	            });
 	        }
 
-	        if (localStorage.getItem('basketCounter')) {
-	            localStorage.setItem('basketCounter', localStorage.getItem('basketCounter'));
-	        } else {
-	            localStorage.setItem('basketCounter', 0);
-	        }
 	        getJSONData();
 	    });
 	};
@@ -15019,43 +15036,20 @@
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {module.exports = function() {
-	    var basketCounter = localStorage.getItem('basketCounter');
+	/* WEBPACK VAR INJECTION */(function($) {var counter = __webpack_require__(8);
 
-	    if (localStorage.getItem('good#' + localStorage.getItem('elementId'))) {
-	        var localCounter = localStorage.getItem('good#' + localStorage.getItem('elementId'));
-	    } else {
-	        localCounter = 0;
-	    }
+	module.exports = function() {
+	    var basketCounter = localStorage.getItem('basketCounter'),
+	        goodView = JSON.parse(localStorage.getItem('good#' + localStorage.getItem('elementId'))),
+	        localCounter = goodView.numberOf;
 
 	    $(".buy_button").on("click", function () {
-	        var basketFinalWord = '';
-
-	        function setBasketCounter() {
-	            $(".basket_link > span").text(function () {
-	                switch (basketCounter) {
-	                    case 1:
-	                        basketFinalWord = ' товар';
-	                        break;
-	                    case 2:
-	                    case 3:
-	                    case 4:
-	                        basketFinalWord = ' товара';
-	                        break;
-	                    default:
-	                        basketFinalWord = ' товаров';
-	                        break;
-	                }
-	                return (basketCounter + basketFinalWord);
-	            });
-	            $(".basket_link").removeClass("disabled");
-	        }
-
 	        ++basketCounter;
 	        ++localCounter;
 	        localStorage.setItem('basketCounter', basketCounter);
-	        localStorage.setItem('good#' + localStorage.getItem('elementId'), localCounter);
-	        setBasketCounter();
+	        counter();
+	        goodView.numberOf = localCounter;
+	        localStorage.setItem('good#' + localStorage.getItem('elementId'), JSON.stringify(goodView));
 	    });
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
@@ -15065,73 +15059,139 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {module.exports = function() {
-	    var countPrice = function (price, target, counter) {
-	            var costOf = parseInt(price) * counter,
-	                changedElement = $(target).parent().nextAll(".table_col_cost").children("input");
+	    var basketFinalWord = '';
+	    
+	    if (!(localStorage.getItem('basketCounter')) || localStorage.getItem('basketCounter') == 0) {
+	        localStorage.setItem('basketCounter', 0);
+	        return;
+	    }
 
-	            $(changedElement).attr("value", costOf);
-	        },
+	    var basketCounter = localStorage.getItem('basketCounter');
 
-	        countTotalNumberof = function () {
-	            var arr = $(".main_content_table > tbody").find(".table_col_numberof"),
-	                totalCounter = 0;
-	            // console.log(arr);
-
-	            for (var i = 0; i < arr.length; i++) {
-	                totalCounter = totalCounter + parseInt($($(arr)[i]).children("input").attr("value"));
+	    function setBasketCounter() {
+	        $(".basket_link > span").text(function () {
+	            switch (basketCounter) {
+	                case 1:
+	                    basketFinalWord = ' товар';
+	                    break;
+	                case 2:
+	                case 3:
+	                case 4:
+	                    basketFinalWord = ' товара';
+	                    break;
+	                default:
+	                    basketFinalWord = ' товаров';
+	                    break;
 	            }
-	            $(".total_numberof").attr("value", totalCounter);
-	        },
+	            return (basketCounter + basketFinalWord);
+	        });
+	        $(".basket_link").removeClass("disabled");
+	    }
+	    setBasketCounter();
+	};
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
-	        countTotalPrice = function () {
-	            var arr = $(".main_content_table > tbody").find(".table_col_cost"),
-	                totalPrice = 0;
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
 
-	            for (var i = 0; i < arr.length; i++) {
-	                totalPrice = totalPrice + parseInt($($(arr)[i]).children("input").attr("value"));
-	            }
-	            $(".total_price").attr("value", totalPrice);
-	        };
+	/* WEBPACK VAR INJECTION */(function($) {var basketCount = __webpack_require__(8);
 
+	module.exports = function() {
+	    var basketCounter = localStorage.getItem('basketCounter'),
+	        goodsView = {};
+
+	    function countPriceFirst() {
+	        var base = $(".main_content_table > tbody"),
+	            priceArr = base.find(".table_col_price"),
+	            numberofArr = base.find(".table_col_numberof"),
+	            totalPrice = base.find(".table_col_cost");
+
+	        for (var i = 0; i < priceArr.length; i++) {
+	            currentPrice = $($(priceArr[i])).html().replace(/\s+/g, '').slice(0, -2) * parseInt($($(numberofArr)[i]).children("input").attr("value"));
+	            $($(totalPrice)[i]).children("input").attr("value", currentPrice);
+	        }
+	    }
+
+	    function countPrice(target, counter) {
+	        var price = $(target).parent().prevAll(".table_col_price").html().replace(/\s+/g, '').slice(0, -2),
+	            costOf = parseInt(price) * counter,
+	            changedElement = $(target).parent().nextAll(".table_col_cost").children("input"),
+	            targetId = $(target).parent().prevAll(".table_col_art").html(),
+	            localStorageItem = JSON.parse(localStorage.getItem('good#' + targetId));
+
+	        localStorageItem.numberOf = counter;
+	        localStorage.setItem("good#" + targetId, JSON.stringify(localStorageItem));
+
+	        $(changedElement).attr("value", costOf);
+	        localStorage.setItem('basketCounter', basketCounter);
+	        countTotalNumberof();
+	        countTotalPrice();
+	        basketCount();
+	    }
+
+	    function countTotalNumberof() {
+	        var arr = $(".main_content_table > tbody").find(".table_col_numberof"),
+	            totalCounter = 0;
+
+	        for (var i = 0; i < arr.length; i++) {
+	            totalCounter = totalCounter + parseInt($($(arr)[i]).children("input").attr("value"));
+	        }
+	        $(".total_numberof").attr("value", totalCounter);
+	    }
+
+	    function countTotalPrice() {
+	        var arr = $(".main_content_table > tbody").find(".table_col_cost"),
+	            totalPrice = 0;
+
+	        for (var i = 0; i < arr.length; i++) {
+	            totalPrice = totalPrice + parseInt($($(arr)[i]).children("input").attr("value"));
+	        }
+	        $(".total_price").attr("value", totalPrice);
+	    }
+
+	    countPriceFirst();
+	    goodsView.goods = [];
 	    countTotalNumberof();
 	    countTotalPrice();
 
 	    $(".del_row_icon").on("click", function (event) {
 	        var target = event.target,
+	            targetId = $(target).parent().prevAll(".table_col_art").html(),
 	            totalCounterMinus = $(target).parent().prevAll(".table_col_numberof").children("input").attr("value");
 
 	        $(target).parent().parent().remove();
+	        basketCounter = basketCounter - totalCounterMinus;
+	        localStorage.setItem('basketCounter', basketCounter);
 	        countTotalNumberof();
 	        countTotalPrice();
+	        basketCount();
+	        localStorage.removeItem("good#" + targetId);
 	    });
 
 	    $(".table_numberof_minus").on("click", function (event) {
 	        var target = event.target,
-	            counter = $(target).next().attr("value"),
-	            price = $(target).parent().prevAll(".table_col_price").html();
+	            counter = $(target).next().attr("value");
 
 	        if (counter == 0) {
 	            return
 	        } else {
 	            --counter;
+	            --basketCounter;
 	        }
 
 	        $(target).next().attr("value", counter);
-	        countPrice(price, target, counter);
-	        countTotalNumberof();
-	        countTotalPrice();
+	        countPrice(target, counter);
 	    });
 
 	    $(".table_numberof_plus").on("click", function (event) {
 	        var target = event.target,
-	            counter = $(target).prev().attr("value"),
-	            price = $(target).parent().prevAll(".table_col_price").html();
+	            counter = $(target).prev().attr("value");
 
 	        ++counter;
+	        ++basketCounter;
 	        $(target).prev().attr("value", counter);
-	        countPrice(price, target, counter);
-	        countTotalNumberof();
-	        countTotalPrice();
+	        countPrice(target, counter);
 	    });
 	};
 
@@ -15139,11 +15199,11 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {var notify = __webpack_require__(10),
-	    datetimepicker = __webpack_require__(11);
+	/* WEBPACK VAR INJECTION */(function($) {var notify = __webpack_require__(11),
+	    datetimepicker = __webpack_require__(12);
 
 	module.exports = function() {
 	    $('#datetimepicker').datetimepicker({
@@ -15212,7 +15272,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* Notify.js - http://notifyjs.com/ Copyright (c) 2015 MIT */
@@ -15844,7 +15904,7 @@
 
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* =========================================================
@@ -17736,6 +17796,36 @@
 
 	}));
 
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(Mustache) {module.exports = function(template) {
+	    var goodsView = {};
+	    
+	    function getGoodsView() {
+	        for (var i = 0; i < localStorage.length; i++) {
+	            var key = localStorage.key(i),
+	                value = localStorage[key];
+
+
+	            if (key.indexOf('good') == 0) {
+	                goodsView.goods.push(JSON.parse(value));
+	            }
+	        }
+	    }
+
+	    function constructBasketTemplate(template) {
+	        return Mustache.render(template, goodsView);
+	    }
+
+	    goodsView.goods = [];
+	    getGoodsView();
+	    return constructBasketTemplate(template);
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }
 /******/ ]);
