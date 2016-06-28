@@ -9,14 +9,13 @@ module.exports = function() {
     });
 
     var errorNull = true,
-        errorEmail = true,
-        errorLog = {};
+        errorEmail = true;
 
     function checkNull() {
         $(this).val($(this).val().trim());
 
         if ($(this).val() == "") {
-            $(this).notify("Поле незаполнено", {
+            $("#send").notify("Не все обязательные поля заполнены", {
                     className: "error",
                     position: "right"
                 }
@@ -33,7 +32,7 @@ module.exports = function() {
         var value = $(this).val().trim();
 
         if (value.search(/^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]{2,6}$/i) != 0) {
-            $(this).notify("Некорректный Email", {
+            $("#send").notify("Некорректный Email", {
                 className: "error",
                 position: "right"
             });
@@ -41,26 +40,29 @@ module.exports = function() {
             errorEmail = true;
         } else {
             errorEmail = false;
+            $(this).removeClass("errtextbox");
         }
     }
 
-    $("#inputName").focusout(checkNull);
-    $("#inputAdress").focusout(checkNull);
-    $("#inputDate").focusout(checkNull);
-    $("#inputEmail").focusout(checkEmail);
+    $("#inputName").submit(checkNull);
+    $("#inputAdress").submit(checkNull);
+    $("#inputEmail").submit(checkEmail);
 
     $("#send").click(function () {
+        $("#inputAdress").trigger("submit");
+        $("#inputEmail").trigger("submit");
+        $("#inputName").trigger("submit");
+
         if (!(errorNull || errorEmail)) {
+            alert("Ваш заказ успешно оформлен");
             $("#regForm").submit();
+            localStorage.clear();
+
         } else {
             $(this).notify("Форма заполнена некорректно", {
                 className: "error",
                 position: "right"
             });
-            $("#inputName").trigger("focusout");
-            $("#inputAdress").trigger("focusout");
-            $("#inputDate").trigger("focusout");
-            $("#inputEmail").trigger("focusout");
         }
     });
 };
