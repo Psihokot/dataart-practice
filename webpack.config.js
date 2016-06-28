@@ -2,13 +2,13 @@ var webpack = require("webpack"),
     path = require('path');
 
 module.exports = {
-    context: path.join(__dirname, "assets", "js"),//__dirname + '/assets/js',
+    context: path.join(__dirname, "assets", "js"),
     entry: {
         home: "./home"
     },
     
     output: {
-        path: path.resolve(__dirname, "public"),//__dirname + "/public",
+        path: path.resolve(__dirname, "public"),
         filename: "index.js"
     },
 
@@ -20,7 +20,7 @@ module.exports = {
     },
 
     resolve: {
-        root: path.resolve(__dirname, "vendor"),//__dirname + '/vendor',
+        root: path.resolve(__dirname, "vendor"),
         moduleDirectories: ['node_modules'],
         extensions: ['', '.js']
     },
@@ -34,7 +34,7 @@ module.exports = {
         })
     ]
 };
-//
+
 // module.exports.plugins.push(
 //     new webpack.optimize.UglifyJsPlugin({
 //         compress: {

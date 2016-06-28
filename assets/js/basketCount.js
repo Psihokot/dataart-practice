@@ -3,7 +3,6 @@ module.exports = function() {
     
     if (!(localStorage.getItem('basketCounter')) || localStorage.getItem('basketCounter') == 0) {
         localStorage.setItem('basketCounter', 0);
-        return;
     }
 
     var basketCounter = localStorage.getItem('basketCounter');
@@ -11,12 +10,15 @@ module.exports = function() {
     function setBasketCounter() {
         $(".basket_link > span").text(function () {
             switch (basketCounter) {
-                case 1:
+                case "0":
+                    basketFinalWord = ' пусто';
+                    return basketFinalWord;
+                case "1":
                     basketFinalWord = ' товар';
                     break;
-                case 2:
-                case 3:
-                case 4:
+                case "2":
+                case "3":
+                case "4":
                     basketFinalWord = ' товара';
                     break;
                 default:
@@ -25,7 +27,18 @@ module.exports = function() {
             }
             return (basketCounter + basketFinalWord);
         });
-        $(".basket_link").removeClass("disabled");
+
+        if (basketCounter == 0) {
+            $(".basket_link").addClass("disabled");
+        } else {
+            $(".basket_link").removeClass("disabled");
+        }
+
     }
     setBasketCounter();
+
+    if (basketCounter == 0) {
+        $(".main_content > form").html("Корзина пуста");
+        $(".main_content > a").remove();
+    }
 };

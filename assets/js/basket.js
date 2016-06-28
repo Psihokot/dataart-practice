@@ -4,6 +4,11 @@ module.exports = function() {
     var basketCounter = localStorage.getItem('basketCounter'),
         goodsView = {};
 
+    if (basketCounter == 0) {
+        $(".main_content > form").html("Корзина пуста");
+        $(".main_content > a").remove();
+    }
+
     function countPriceFirst() {
         var base = $(".main_content_table > tbody"),
             priceArr = base.find(".table_col_price"),

@@ -125,17 +125,29 @@ header {
 .header_contacts_mail a {
     color: #000;
 }
+div.modal-content {
+    background: #f5f5f5;
+}
 div.modal.in {
     margin: auto;
     padding-right: 0 !important;
+}
+div.modal-body {
+    padding: 0;
+}
+form.well {
+    border: none;
+    box-shadow: none;
 }
 .modal-body form {
     margin-bottom: 0;
 }
 .modal-body input {
+    width: 100%;
     margin-bottom: 5px;
 }
 .modal-body textarea {
+    width: 100%;
 }
 .hc_mail_icon {
     margin-right: 8px;
@@ -777,6 +789,19 @@ table input {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.main_content .control-group input[type="text"],
+.main_content .control-group textarea {
+    width: 100%;
+}
+#inputName.errtextbox {
+    border-color: #ff0000;
+}
+#inputEmail.errtextbox {
+    border-color: #ff0000;
+}
+#inputAdress.errtextbox {
+    border-color: #ff0000;
 }
 .help-inline {
     display: none;
