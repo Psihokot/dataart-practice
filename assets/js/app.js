@@ -1,7 +1,9 @@
 var index = require('./index'),
     good = require('./good'),
     basket = require('./basket'),
-    order = require('./order');
+    order = require('./order'),
+    basketCount = require('./basketCount'),
+    tableConstruct = require('./tableConstruct');
 
 module.exports = function() {
     $(function () {
@@ -44,18 +46,34 @@ module.exports = function() {
             loadPage();
         };
 
-        function loadTemplate(data) {
-            var rendered = Mustache.render(data, view);
-            mainTemplate.html(rendered);
+        function loadTemplate(template) {
             
+            if (templateHash == "good") {
+                var goodId = getGoodID() - 1;
+                
+                if (localStorage.getItem('good#' + getGoodID())) {       // чтобы не было обнуления количества товара
+                    var goodView = JSON.parse(localStorage.getItem('good#' + getGoodID()));
+                } else {
+                    goodView = view.good[goodId];
+                    goodView.numberOf = "0";
+                }
+
+                var rendered = Mustache.render(template, goodView);
+                mainTemplate.html(rendered);
+                localStorage.setItem('elementId', goodView.id);
+                localStorage.setItem('good#' + goodView.id, JSON.stringify(goodView));
+            } else {
+                rendered = Mustache.render(template, view);
+                mainTemplate.html(rendered);
+            }
+
+            basketCount();
             switch (templateHash) {
                 case "index":
                     index();
                     break;
                 case "good":
-                    localStorage.setItem('elementId', getGoodID());
                     good();
-
                     break;
                 case "basket":
                     basket();
@@ -74,6 +92,10 @@ module.exports = function() {
                 type: "GET",
                 url: "../assets/templates/" + templateHash + ".mustache",
                 success: function(data) {
+                    
+                    if (templateHash == 'basket') {
+                        data = tableConstruct(data);
+                    }
                     loadTemplate(data);
                 },
                 error: function() {
@@ -100,11 +122,6 @@ module.exports = function() {
             });
         }
 
-        if (localStorage.getItem('basketCounter')) {
-            localStorage.setItem('basketCounter', localStorage.getItem('basketCounter'));
-        } else {
-            localStorage.setItem('basketCounter', 0);
-        }
         getJSONData();
     });
 };
