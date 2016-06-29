@@ -15149,7 +15149,7 @@
 	        goodsView = {};
 
 	    if (basketCounter == 0) {
-	        $(".main_content > form").html("Корзина пуста");
+	        $(".main_content > form").html("<h2>Корзина пуста</h2>");
 	        $(".main_content > a").remove();
 	    }
 
@@ -15255,7 +15255,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {var notify = __webpack_require__(11),
-	    datetimepicker = __webpack_require__(12);
+	    datetimepicker = __webpack_require__(12),
+	    basketCount = __webpack_require__(8);
 
 	module.exports = function() {
 	    $('#datetimepicker').datetimepicker({
@@ -15304,25 +15305,24 @@
 	    $("#inputAdress").submit(checkNull);
 	    $("#inputEmail").submit(checkEmail);
 
-	    $("#send").click(function () {
+	    $("#send").click(function() {
 	        $("#inputAdress").trigger("submit");
 	        $("#inputEmail").trigger("submit");
 	        $("#inputName").trigger("submit");
 
 	        if (!(errorNull || errorEmail)) {
-	            alert("Ваш заказ успешно оформлен");
-	            // localStorage.setItem('basketCounter', 0);
-	            // localStorage.removeItem("elementId");
-	            $("#regForm").submit();
-	            localStorage.clear();
-	            // for (var i = 0; i < localStorage.length; i++) {
-	            //     var key = localStorage.key(i);
-	            //
-	            //     if (key.indexOf('good') == 0) {
-	            //         localStorage.removeItem(key);
-	            //     }
-	            // }
 
+	            $(".order_form").attr("style", "display: none");
+
+	            // setTimeout(function() {
+	            //     $("#regForm").removeAttr("onsubmit");
+	            //     $("#regForm").submit();
+	            // }, 2000
+	            // );
+
+	            $(".main_content_header").after("<h2>Ваш заказ успешно оформлен</h2>");
+	            localStorage.clear();
+	            basketCount();
 	        } else {
 	            $(this).notify("Форма заполнена некорректно", {
 	                className: "error",

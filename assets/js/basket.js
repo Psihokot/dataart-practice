@@ -5,7 +5,7 @@ module.exports = function() {
         goodsView = {};
 
     if (basketCounter == 0) {
-        $(".main_content > form").html("Корзина пуста");
+        $(".main_content > form").html("<h2>Корзина пуста</h2>");
         $(".main_content > a").remove();
     }
 
