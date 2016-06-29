@@ -1,5 +1,6 @@
 var notify = require('notify'),
-    datetimepicker = require('bootstrap-datetimepicker/js/bootstrap-datetimepicker');
+    datetimepicker = require('bootstrap-datetimepicker/js/bootstrap-datetimepicker'),
+    basketCount = require('./basketCount');
 
 module.exports = function() {
     $('#datetimepicker').datetimepicker({
@@ -48,16 +49,24 @@ module.exports = function() {
     $("#inputAdress").submit(checkNull);
     $("#inputEmail").submit(checkEmail);
 
-    $("#send").click(function () {
+    $("#send").click(function() {
         $("#inputAdress").trigger("submit");
         $("#inputEmail").trigger("submit");
         $("#inputName").trigger("submit");
 
         if (!(errorNull || errorEmail)) {
-            alert("Ваш заказ успешно оформлен");
-            $("#regForm").submit();
-            localStorage.clear();
 
+            $(".order_form").attr("style", "display: none");
+
+            // setTimeout(function() {
+            //     $("#regForm").removeAttr("onsubmit");
+            //     $("#regForm").submit();
+            // }, 2000
+            // );
+
+            $(".main_content_header").after("<h2>Ваш заказ успешно оформлен</h2>");
+            localStorage.clear();
+            basketCount();
         } else {
             $(this).notify("Форма заполнена некорректно", {
                 className: "error",

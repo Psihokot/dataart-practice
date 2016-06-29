@@ -5,56 +5,58 @@
         <span>Оформление заказа</span>
     </div>
 </div>
-<form id="regForm" class="form-horizontal" method="post" enctype="multipart/form-data" action="#index">
-    <h2>Оформление заказа</h2>
-    <div class="control-group">
-        <label class="control-label" for="inputName">Ваше имя<span class="important"> *</span></label>
-        <div class="controls">
-            <input type="text" id="inputName" name="orderName" placeholder="Имя" size="60">
+<div class="order_form">
+    <form id="regForm" class="form-horizontal" method="post" enctype="multipart/form-data" onsubmit="return false">
+        <h2>Оформление заказа</h2>
+        <div class="control-group">
+            <label class="control-label" for="inputName">Ваше имя<span class="important"> *</span></label>
+            <div class="controls">
+                <input type="text" id="inputName" name="orderName" placeholder="Имя" size="60">
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="inputSurname">Ваша фамилия</label>
-        <div class="controls">
-            <input type="text" id="inputSurname" name="orderSurname" placeholder="Фамилия" size="60">
+        <div class="control-group">
+            <label class="control-label" for="inputSurname">Ваша фамилия</label>
+            <div class="controls">
+                <input type="text" id="inputSurname" name="orderSurname" placeholder="Фамилия" size="60">
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="inputEmail">Email<span class="important"> *</span></label>
-        <div class="controls">
-            <input type="text" id="inputEmail" name="orderEmail" placeholder="Email" size="60">
+        <div class="control-group">
+            <label class="control-label" for="inputEmail">Email<span class="important"> *</span></label>
+            <div class="controls">
+                <input type="text" id="inputEmail" name="orderEmail" placeholder="Email" size="60">
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="inputAdress">Адрес доставки<span class="important"> *</span></label>
-        <div class="controls">
-            <input type="text" id="inputAdress" name="orderAdress" placeholder="Адрес доставки" size="60">
+        <div class="control-group">
+            <label class="control-label" for="inputAdress">Адрес доставки<span class="important"> *</span></label>
+            <div class="controls">
+                <input type="text" id="inputAdress" name="orderAdress" placeholder="Адрес доставки" size="60">
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="dp1">Дата доставки</label>
-        <div class="controls">
-            <div class="form-group">
-                <div class="input-group date" id="datetimepicker">
-                    <input type="text" class="form-control" id="dp1" name="orderDate" placeholder="08.06.2016" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+        <div class="control-group">
+            <label class="control-label" for="dp1">Дата доставки</label>
+            <div class="controls">
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker">
+                        <input type="text" class="form-control" id="dp1" name="orderDate" placeholder="08.06.2016" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="control-group">
-        <div class="controls">
-            <input type="file" id="inputFile" name="orderFile" placeholder="Прикрепить файл" multiple>
+        <div class="control-group">
+            <div class="controls">
+                <input type="file" id="inputFile" name="orderFile" placeholder="Прикрепить файл" multiple>
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="inputComments">Примечания</label>
-        <div class="controls">
-            <textarea rows="6" cols="62" id="inputComments" name="orderComment" placeholder="Примечания"></textarea>
+        <div class="control-group">
+            <label class="control-label" for="inputComments">Примечания</label>
+            <div class="controls">
+                <textarea rows="6" cols="62" id="inputComments" name="orderComment" placeholder="Примечания"></textarea>
+            </div>
         </div>
-    </div>
-</form>
-<p><span class="important">*</span> - Поля, обязательные для заполнения</p>
-<button id="send" class="btn btn-primary">Отправить</button>
+    </form>
+    <p><span class="important">*</span> - Поля, обязательные для заполнения</p>
+    <button id="send" class="btn btn-primary" form="regForm">Отправить</button>
+</div>
