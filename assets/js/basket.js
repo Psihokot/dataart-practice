@@ -11,13 +11,13 @@ module.exports = {
     init: function(){
 
         var self = this,
-          goodsView = {};
+            goodsView = {};
 
           //this.basketCounter = localStorage.getItem('basketCounter');
           //this.basketCounter = this.basketModel.basketCounter;
 
-        if (this.basketModel.basketCounter== 0) {
-            $(".main_content > form").html("<h2>Корзина пуста</h2>");
+        if (this.basketModel.basketCounter == 0) {
+            $(".main_content > form").html("<h1>Корзина пуста</h1>");
             $(".main_content > a").remove();
         }
 
@@ -29,18 +29,16 @@ module.exports = {
         $(".del_row_icon").on("click", function (event) {
 
             var target = event.target,
-              targetId = $(target).parent().prevAll(".table_col_art").html(),
-              totalCounterMinus = $(target).parent().prevAll(".table_col_numberof").children("input").attr("value");
-
-            $(target).parent().parent().remove();
-
+                targetId = $(target).parent().prevAll(".table_col_art").html(),
+                totalCounterMinus = $(target).parent().prevAll(".table_col_numberof").children("input").attr("value");
+            
             $(target).parent().parent().remove();
             self.basketModel.basketCounter = self.basketModel.basketCounter - totalCounterMinus;
             self.countTotalNumberof();
             self.countTotalPrice();
-            self.basketCount();
 
             self.basketModel.removeGood(targetId);
+            self.basketCount();
 
             /*var target = event.target,
               targetId = $(target).parent().prevAll(".table_col_art").html(),

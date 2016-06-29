@@ -38,7 +38,7 @@ module.exports = function() {
     setBasketCounter();
 
     if (basketCounter == 0) {
-        $(".main_content > form").html("Корзина пуста");
+        $(".main_content > form").html("<h1>Корзина пуста</h1>");
         $(".main_content > a").remove();
     }
 };

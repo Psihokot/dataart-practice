@@ -3,15 +3,14 @@ var notify = require('notify'),
 
     MESSAGES = {
         success: "Ваш заказ успешно оформлен",
-          commonError: "Форма заполнена некорректно",
-          requiredError: "Не все обязательные поля заполнены",
-          emailError: "Некорректный Email"
+        commonError: "Форма заполнена некорректно",
+        requiredError: "Не все обязательные поля заполнены",
+        emailError: "Некорректный Email"
     };
 
 module.exports = {
 
-  basketCount : require('./utils/basketCount'),
-
+    basketCount : require('./utils/basketCount'),
     basketModel: require('./models/basketModel'),
 
     errorNull: true,
@@ -30,28 +29,20 @@ module.exports = {
         $("#inputAdress").submit(this.checkNull);
         $("#inputEmail").submit(this.checkEmail);
 
-        $("#send").click(function(e) {
+        $("#send").click(function() {
             $("#inputAdress").trigger("submit");
             $("#inputEmail").trigger("submit");
             $("#inputName").trigger("submit");
-
+            console.log(this.errorNull);
+            console.log(this.errorEmail);
             if (!(self.errorNull || self.errorEmail)) {
 
                 $(".order_form").attr("style", "display: none");
-
-                // setTimeout(function() {
-                //     $("#regForm").removeAttr("onsubmit");
-                //     $("#regForm").submit();
-                // }, 2000
-                // );
-
                 $(".main_content_header").after("<h2>"+ MESSAGES.success +"</h2>");
-                //localStorage.clear();
                 self.basketModel.clear();
-
                 this.basketCount();
+
             } else {
-                //e.preventDefault();
 
                 $(this).notify(MESSAGES.commonError, {
                     className: "error",
@@ -71,9 +62,9 @@ module.exports = {
                 }
             );
             $(this).addClass("errtextbox");
-            this.errorNull = true;
+            this.errorNull = true; //this - это объект jQuery
         } else {
-            this.errorNull = false;
+            this.errorNull = false; //this - это объект jQuery
             $(this).removeClass("errtextbox");
         }
     },
@@ -87,9 +78,9 @@ module.exports = {
                 position: "right"
             });
             $(this).addClass("errtextbox");
-            this.errorEmail = true;
+            this.errorEmail = true; //this - это объект jQuery
         } else {
-            this.errorEmail = false;
+            this.errorEmail = false; //this - это объект jQuery
             $(this).removeClass("errtextbox");
         }
     }
