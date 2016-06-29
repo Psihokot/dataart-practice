@@ -114,8 +114,8 @@ module.exports = function() {
         function getJSONData() {
             $.ajax({
                 type: "GET",
-                url: "../assets/json/data.json",
-                dataType: "json",
+                url: "../assets/data/data.data",
+                dataType: "data",
                 success: function(data) {
                     view = data;
                     loadPage();
@@ -263,8 +263,8 @@ module.exports = {
 
             $.ajax({
                 type: "GET",
-                url: "../assets/json/data.json",
-                dataType: "json",
+                url: "../assets/data/data.data",
+                dataType: "data",
                 success: function(data) {
                     self.view = data;
                     self.loadPage();

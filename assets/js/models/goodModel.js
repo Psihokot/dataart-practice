@@ -9,7 +9,7 @@ module.exports = {
 
     $.ajax({
       type: "GET",
-      url: "../assets/json/data.json",
+      url: "../assets/data/goods.json",
       dataType: "json",
       success: function(data) {
         self.goods = data;
