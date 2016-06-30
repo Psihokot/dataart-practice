@@ -33,5 +33,30 @@ module.exports = {
         this.counter();
         goodView.numberOf = localCounter;
         localStorage.setItem('good#' + localStorage.getItem('elementId'), JSON.stringify(goodView));
+    },
+
+    setGood: function(goodView){
+        localStorage.setItem('elementId', goodView.id);
+        localStorage.setItem('good#' + goodView.id, JSON.stringify(goodView));
+    },
+
+    getGoodsView: function(){
+        var goodId = this.getGoodID() - 1,
+            goodView;
+
+        if (localStorage.getItem('good#' + this.getGoodID())) {
+            goodView = JSON.parse(localStorage.getItem('good#' + this.getGoodID()));
+        } else {
+            goodView = this.goods[goodId];
+            goodView.numberOf = "0";
+        }
+
+        return goodView
+    },
+
+    getGoodID: function() {
+        var hash = location.hash;
+
+        return hash.substring(hash.indexOf("/") + 1);
     }
 };

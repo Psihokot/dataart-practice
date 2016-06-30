@@ -1,5 +1,4 @@
-{
-  "good": [{
+[{
       "id": "1",
       "title": "CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT",
       "price": "18 480",
@@ -118,5 +117,5 @@
       "urlBigPic3": "../assets/images/model3/big3.png",
       "urlBigPic4": "../assets/images/model3/big4.png",
       "url": "#good/3"
-    }]
-}
+    }
+]

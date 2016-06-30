@@ -33,6 +33,9 @@ section:not(.active) {
     display: none;
 }
 
+
+/*index page*/
+
                         /*CSS for header*/
 
 header {
@@ -108,8 +111,6 @@ header {
     height: 100%;
     margin-left: 260px;
     margin-right: 210px;
-    /*padding-top: 42px;*/
-    /*padding-left: 18px;*/
     color: #4f4f4f;
 }
 .header_contacts {
@@ -519,6 +520,7 @@ footer {
     margin-top: 15px;
     margin-bottom: 30px;
     color: #747474;
+    text-align: center;
 }
 footer div {
     display: inline-block;
@@ -527,6 +529,7 @@ footer div {
     float: left;
     margin-left: 28px;
     margin-right: 40px;
+    text-align: left;
 }
 .footer_info div {
     display: block;
@@ -544,7 +547,6 @@ footer a {
     width: 88px;
     height: 31px;
     margin-right: 10px;
-    /*background: url("../images/counter.png");*/
 }
 .footer_author {
     float: right;
@@ -553,6 +555,11 @@ footer a {
 .footer_author div {
     display: block;
 }
+
+
+/*good page*/
+
+
 .control-group.error > label,
 .control-group.error .help-block,
 .control-group.error .help-inline {
@@ -587,12 +594,13 @@ footer a {
 
 .main_content_top {
     position: relative;
-    width: 658px;
+    margin-bottom: 35px;
 }
 .content_top_left {
     float: left;
-    display: inline-block;
     width: 330px;
+    position: relative;
+    z-index: 2;
 }
 .carousel_inner_prev {
     display: block;
@@ -609,7 +617,6 @@ footer a {
     height: 85px;
 }
 .top_left_thumbnails .thumbnail {
-    /*height: 80px;*/
     margin-bottom: 0;
 }
 .top_left_carousel {
@@ -620,10 +627,7 @@ footer a {
 }
 .content_top_right {
     position: relative;
-    display: inline-block;
-    clear: both;
-    width: 313px;
-    margin-left: 15px;
+    margin-left: 345px;
 }
 .content_top_left > .carousel {
     width: 330px;
@@ -631,9 +635,16 @@ footer a {
 .top_left_thumbnails ul {
     font-size: 0;
 }
+.carousel-wrap{
+    width: 330px;
+    margin: 0 auto;
+}
 .top_left_thumbnails li {
     display: inline-block;
     width: 110px;
+}
+.top_left_thumbnails .carousel-control{
+    line-height: 85px;
 }
 .top_right_title {
     font-size: 22px;
@@ -652,7 +663,6 @@ footer a {
     font-size: 30px;
     font-weight: bold;
     color: #fff;
-
 }
 .button_price {
     display: inline-block;
@@ -705,9 +715,7 @@ footer a {
 }
 .main_content_description {
     position: relative;
-    width: 658px;
     height: 500px;
-    margin-top: 20px;
     padding: 10px 20px 40px 20px;
     background-color: #fff;
     border: 1px solid #eaeaea;
@@ -722,13 +730,19 @@ footer a {
 .main_content_description .nav-pills a {
     color: #da501a;
 }
-
-.main_content .main_content_table {
-    width: 658px;
+.nav:after{
+    clear: none;
 }
+.tab-content{
+    margin-top: 50px;
+}
+
+/*basket page*/
+
 .main_content .main_content_table th,
-.main_content .main_content_table td {
+.main_content .main_content_table table tr td {
     vertical-align: middle;
+    padding: 8px 0;
 }
 thead th {
     text-align: center;
@@ -752,7 +766,7 @@ table input {
 .table_numberof_minus,
 .table_numberof_plus {
     display: inline-block;
-    padding: 0 5px;
+    padding: 0 3px;
     font-size: 16px;
     font-weight: bold;
     color: #665950;
@@ -770,6 +784,7 @@ table input {
 .del_row_icon {
     width: 20px;
     height: 20px;
+    margin-top: 6px;
     cursor: pointer;
     background: url("../images/remove.png") no-repeat 50% 50%;
 }
@@ -782,7 +797,7 @@ table input {
 }
 .input-group {
     width: 186px;
-    margin-left: 14px;
+    margin-bottom: 15px;
 }
 .main_content input[type="text"],
 .main_content textarea {
@@ -804,14 +819,19 @@ table input {
 #inputAdress.errtextbox {
     border-color: #ff0000;
 }
-.help-inline {
-    display: none;
-}
-.error .help-inline {
-    display: block;
-}
+
+/*order page*/
+
 .important {
     color: #ff0000;
+}
+.empty_message{
+    color: #a7a5a5;
+    text-align: center;
+    font-size: 30px;
+}
+.datetimepicker .day{
+    cursor: pointer;
 }
 
 /*Media*/
@@ -823,11 +843,20 @@ table input {
 }
 
 @media all and (max-width: 980px) {
-    .content_top_right {
-        position: relative;
-        width: 330px;
-    }
     .main_goods_element {
         width: 50%;
+    }
+
+    .content_top_right{
+        margin-left: 0;
+    }
+
+    .content_top_left{
+        width: 100%;
+    }
+
+    .footer_author,
+    .footer_info{
+        font-size: 12px;
     }
 }

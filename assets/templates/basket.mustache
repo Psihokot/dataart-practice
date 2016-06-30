@@ -5,7 +5,7 @@
         <span>Корзина</span>
     </div>
 </div>
-<form>
+<form class="order_form">
     <table class="main_content_table table table-hover">
         <thead>
         <tr>
@@ -25,7 +25,7 @@
                 <td class="table_col_price">{{price}} р.</td>
                 <td class="table_col_numberof">
                     <a class="table_numberof_minus">-</a>
-                    <input type="text" value="{{numberOf}}" size="2" disabled>
+                    <input type="text" value="{{numberOf}}" size="1" disabled>
                     <a class="table_numberof_plus">+</a>
                 </td>
                 <td class="table_col_cost">
@@ -49,6 +49,6 @@
         </tbody>
     </table>
 </form>
-<a href="#order">
-    <button class="btn btn-primary">Оформить заказ</button>
+<a class="order_btn btn btn-primary" href="#order">
+    Оформить заказ
 </a>

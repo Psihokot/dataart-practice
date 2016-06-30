@@ -3,7 +3,6 @@ var notify = require('notify'),
 
     MESSAGES = {
         success: "Ваш заказ успешно оформлен",
-        commonError: "Форма заполнена некорректно",
         requiredError: "Не все обязательные поля заполнены",
         emailError: "Некорректный Email"
     };
@@ -25,64 +24,62 @@ module.exports = {
             language: 'ru'
         });
 
-        $("#inputName").submit(this.checkNull);
-        $("#inputAdress").submit(this.checkNull);
-        $("#inputEmail").submit(this.checkEmail);
-
         $("#send").click(function() {
-            $("#inputAdress").trigger("submit");
-            $("#inputEmail").trigger("submit");
-            $("#inputName").trigger("submit");
-            console.log(this.errorNull);
-            console.log(this.errorEmail);
-            if (!(self.errorNull || self.errorEmail)) {
 
+            var isError = self.checkNull($("#inputName")) ||
+                        self.checkEmail($("#inputEmail")) ||
+                        self.checkNull($("#inputAdress"));
+
+            if (!isError) {
                 $(".order_form").attr("style", "display: none");
                 $(".main_content_header").after("<h2>"+ MESSAGES.success +"</h2>");
                 self.basketModel.clear();
                 this.basketCount();
-
-            } else {
-
-                $(this).notify(MESSAGES.commonError, {
-                    className: "error",
-                    position: "right"
-                });
             }
         });
     },
 
-    checkNull: function() {
-        $(this).val($(this).val().trim());
+    checkNull: function(el) {
 
-        if ($(this).val() == "") {
+        var isError;
+        
+        el.val(el.val().trim());
+
+        if (el.val() == "") {
             $("#send").notify(MESSAGES.requiredError, {
                     className: "error",
                     position: "right"
                 }
             );
-            $(this).addClass("errtextbox");
-            this.errorNull = true; //this - это объект jQuery
+            el.addClass("errtextbox");
+
+            isError = true;
         } else {
-            this.errorNull = false; //this - это объект jQuery
-            $(this).removeClass("errtextbox");
+            el.removeClass("errtextbox");
+
+            isError = false;
         }
+
+        return isError;
     },
 
-    checkEmail: function() {
-        var value = $(this).val().trim();
+    checkEmail: function(el) {
+        var value = el.val().trim(),
+            isError;
 
         if (value.search(/^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]{2,6}$/i) != 0) {
             $("#send").notify(MESSAGES.emailError, {
                 className: "error",
                 position: "right"
             });
-            $(this).addClass("errtextbox");
-            this.errorEmail = true; //this - это объект jQuery
+            el.addClass("errtextbox");
+            isError = true;
         } else {
-            this.errorEmail = false; //this - это объект jQuery
-            $(this).removeClass("errtextbox");
+            isError = false;
+            el.removeClass("errtextbox");
         }
+
+        return isError;
     }
 
 

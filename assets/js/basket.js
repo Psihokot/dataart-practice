@@ -6,28 +6,26 @@ module.exports = {
 
     init: function(){
 
-        var self = this,
-            goodsView = {};
+        var self = this;
 
         self.basketModel.initBasketCounter();
 
         if (this.basketModel.basketCounter == 0) {
-            $(".main_content > form").html("<h1>Корзина пуста</h1>");
-            $(".main_content > a").remove();
+            $(".order_form").html("<div class='empty_message'>Корзина пуста</div>");
+            $(".order_btn").remove();
         }
 
         this.countPriceFirst();
-        goodsView.goods = [];
         this.countTotalNumberof();
         this.countTotalPrice();
 
         $(".del_row_icon").on("click", function (event) {
 
             var target = event.target,
-                targetId = $(target).parent().prevAll(".table_col_art").html(),
-                totalCounterMinus = $(target).parent().prevAll(".table_col_numberof").children("input").attr("value");
+                targetId = $(target).closest('tr').find(".table_col_art").html(),
+                totalCounterMinus = $(target).closest('tr').find(".table_col_numberof").children("input").attr("value");
             
-            $(target).parent().parent().remove();
+            $(target).closest('tr').remove();
             self.basketModel.basketCounter = self.basketModel.basketCounter - totalCounterMinus;
             self.countTotalNumberof();
             self.countTotalPrice();
@@ -38,7 +36,7 @@ module.exports = {
 
         $(".table_numberof_minus").on("click", function (event) {
             var target = event.target,
-              counter = $(target).next().attr("value");
+              counter = $(target).closest('tr').find(".table_col_numberof").children("input").attr("value");
 
             if (counter == 0) {
                 return
@@ -53,10 +51,9 @@ module.exports = {
 
         $(".table_numberof_plus").on("click", function (event) {
             var target = event.target,
-              counter = $(target).prev().attr("value");
+              counter = $(target).closest('tr').find(".table_col_numberof").children("input").attr("value");
 
             ++counter;
-            //++self.basketCounter;
             ++self.basketModel.basketCounter;
 
             $(target).prev().attr("value", counter);
@@ -77,10 +74,10 @@ module.exports = {
     },
 
     countPrice: function(target, counter) {
-        var price = $(target).parent().prevAll(".table_col_price").html().replace(/\s+/g, '').slice(0, -2),
+        var price = $(target).closest('tr').find(".table_col_price").html().replace(/\s+/g, '').slice(0, -2),
             costOf = parseInt(price) * counter,
-            changedElement = $(target).parent().nextAll(".table_col_cost").children("input"),
-            targetId = $(target).parent().prevAll(".table_col_art").html();
+            changedElement = $(target).closest('tr').find(".table_col_cost").children("input"),
+            targetId = $(target).closest('tr').find(".table_col_art").html();
         
         this.basketModel.changeQnty(targetId, counter);
 
