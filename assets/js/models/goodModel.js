@@ -2,7 +2,6 @@
 module.exports = {
 
     goods: [],
-    basketModel: require('./basketModel'),
     
     fetch: function(router){
     
@@ -31,7 +30,6 @@ module.exports = {
         ++basketCounter;
         ++localCounter;
         localStorage.setItem('basketCounter', basketCounter);
-        this.basketModel.basketCounter = basketCounter;
         this.counter();
         goodView.numberOf = localCounter;
         localStorage.setItem('good#' + localStorage.getItem('elementId'), JSON.stringify(goodView));

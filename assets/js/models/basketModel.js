@@ -1,9 +1,13 @@
 
 module.exports = {
 
-    basketCounter: localStorage.getItem('basketCounter'),
+    basketCounter: "",
+  
+    initBasketCounter: function() {
+        this.basketCounter = localStorage.getItem('basketCounter');
+    },
     
-    removeGood : function(targetId){
+    removeGood: function(targetId){
         localStorage.setItem('basketCounter', this.basketCounter);
         localStorage.removeItem("good#" + targetId);
     },

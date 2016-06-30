@@ -40,17 +40,24 @@ header {
     height: 174px;
 }
 .header_menu {
+    position: relative;
     background-color: #4f4f4f;
     height: 48px;
 }
-.header_links {
+.header_links_container {
+    position: relative;
+    width: 100%;
+    min-width: 490px;
     display: inline-block;
-    width: 639px;
-    margin: 15px 0 15px 31px;
+    margin-top: 15px;
+}
+.header_links {
+    padding-right: 240px;
+    padding-left: 31px;
 }
 .header_menu li {
     display: inline-block;
-    margin-right: 27px;
+    margin: 0 4px;
 }
 .header_menu a {
     color: #fff;
@@ -60,8 +67,9 @@ header {
 }
 .header_search {
     position: relative;
+    top: -43px;
     float: right;
-    width: 230px;
+    width: 210px;
     margin: 11px 30px 11px 0;
 }
 .header_search_area {
@@ -70,7 +78,7 @@ header {
     border-radius: 2px;
 }
 .header_search input {
-    width: 228px;
+    width: 208px;
     height: 22px;
     border: none;
     background-color: #eff0f2;
@@ -92,17 +100,22 @@ header {
 .header_logo {
     display: block;
     float: left;
-    width: 305px;
+    width: 260px;
     height: 126px;
     background: url("../images/logo.png") no-repeat 30px 8px;
 }
-.header_contacts {
-    float: left;
-    height: 84px;
-    width: 377px;
-    padding-top: 42px;
-    padding-left: 18px;
+.header_contacts_container {
+    height: 100%;
+    margin-left: 260px;
+    margin-right: 210px;
+    /*padding-top: 42px;*/
+    /*padding-left: 18px;*/
     color: #4f4f4f;
+}
+.header_contacts {
+    margin: 0 auto;
+    padding-top: 42px;
+    max-width: 282px;
 }
 .header_contacts_numbers {
     font-size: 22px;
@@ -167,11 +180,10 @@ form.well {
     background: url("../images/icq.png") no-repeat 50% 50%;
 }
 .header_personal {
-    float: left;
-    width: 260px;
-    height: 84px;
-    margin-left: 18px;
-    padding-top: 42px;
+    position: relative;
+    top: -82px;
+    float: right;
+    width: 210px;
 }
 .header_personal_basket {
     font-size: 14px;
@@ -302,7 +314,7 @@ menu > li > a,
 }
 
 .main_content {
-    float: left;
+    margin-left: 210px;
     padding-left: 32px;
 }
 .main_content_navigation {
@@ -326,23 +338,19 @@ menu > li > a,
     color: #8c8c8c;
 }
 .mcontent_header_categories {
-    box-sizing: border-box;
-    position: relative;
-    height: auto;
     background-color: #4f4f4f;
 }
 .show_categories {
     display: inline-block;
     float: left;
     width: 72px;
-    min-height: 50px;
-    height: 100%;
     margin: 8px 0 0 14px;
     color: #fff;
 }
 .categories {
-   padding: 8px 0 4px 0;
+    margin-left: 86px;
     margin-bottom: 0;
+    padding: 8px 0 4px 0;
 }
 .categories  li {
     display: inline-block;
@@ -389,20 +397,20 @@ li.plus_category {
     background: url("../images/arrow_down.png") no-repeat;
 }
 .main_goods {
-    width: 657px;
     margin-top: 10px;
     font-size: 0;
     background-color: #fff;
 }
 .main_goods_element {
     display: inline-block;
-    width: 214px;
+    width: 25%;
     height: 242px;
 }
 .goods_element_image {
     position: relative;
     width: 208px;
     height: 166px;
+    margin: 0 auto;
     cursor: pointer;
 }
 .goods_element_title {
@@ -483,7 +491,6 @@ a.selected {
     background: url("../images/navigation_arrow.png");
 }
 .main_about {
-    width: 658px;
     margin-top: 60px;
 }
 h1 {
@@ -496,7 +503,6 @@ h1 {
 .main_bottom_menu {
     height: 48px;
     margin-top: 8px;
-    width: 960px;
     padding: 15px 0 15px 31px;
 }
 .main_bottom_menu li {
@@ -511,13 +517,14 @@ h1 {
 
 footer {
     margin-top: 15px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     color: #747474;
 }
 footer div {
     display: inline-block;
 }
 .footer_info {
+    float: left;
     margin-left: 28px;
     margin-right: 40px;
 }
@@ -531,15 +538,13 @@ footer a {
     color: #5e5e5e;
 }
 .footer_counters {
-    position: relative;
-    top: -31px;
+
 }
 .footer_counter {
-    display: inline-block;
     width: 88px;
     height: 31px;
     margin-right: 10px;
-    background: url("../images/counter.png");
+    /*background: url("../images/counter.png");*/
 }
 .footer_author {
     float: right;
@@ -775,10 +780,6 @@ table input {
 .table-hover > tbody > .table_summary:hover {
     background: none;
 }
-
-/*.main_content {*/
-    /*width: 658px;*/
-/*}*/
 .input-group {
     width: 186px;
     margin-left: 14px;
@@ -811,4 +812,22 @@ table input {
 }
 .important {
     color: #ff0000;
+}
+
+/*Media*/
+
+@media all and (max-width: 1218px) {
+    .main_goods_element {
+        width: 33%;
+    }
+}
+
+@media all and (max-width: 980px) {
+    .content_top_right {
+        position: relative;
+        width: 330px;
+    }
+    .main_goods_element {
+        width: 50%;
+    }
 }

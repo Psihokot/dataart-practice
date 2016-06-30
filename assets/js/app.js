@@ -138,7 +138,6 @@ module.exports = {
     goodsModel: require('./models/goodModel.js'),
 
     templateHash: "",
-        ////view: {},
     mainTemplate: {},
 
     init: function(){
@@ -161,8 +160,7 @@ module.exports = {
             }
             self.loadPage();
         };
-
-        //this.getJSONData();
+        
         this.goodsModel.fetch(self);
 
     },
@@ -181,7 +179,6 @@ module.exports = {
                 this.templateHash = "index";
             }
         }
-        //return templateHash;
     },
 
     getGoodID: function() {
@@ -195,7 +192,7 @@ module.exports = {
         if (this.templateHash == "good") {
             var goodId = this.getGoodID() - 1;
 
-            if (localStorage.getItem('good#' + this.getGoodID())) {       // чтобы не было обнуления количества товара
+            if (localStorage.getItem('good#' + this.getGoodID())) {
                 var goodView = JSON.parse(localStorage.getItem('good#' + this.getGoodID()));
             } else {
                 goodView = this.goodsModel.goods.good[goodId];
@@ -254,20 +251,5 @@ module.exports = {
                 });
             }
         });
-    }/*,
-
-    getJSONData: function() {
-        var self = this;
-
-        $.ajax({
-            type: "GET",
-            url: "../assets/data/data.data",
-            dataType: "data",
-            success: function(data) {
-                self.view = data;
-                self.loadPage();
-            }
-        });
-    }*/
-
+    }
 };

@@ -1,20 +1,15 @@
-//var basketCount = require('./basketCount');
-
 module.exports = {
 
     basketModel: require('./models/basketModel'),
 
     basketCount: require('./utils/basketCount'),
 
-    //basketCounter: "",
-
     init: function(){
 
         var self = this,
             goodsView = {};
 
-          //this.basketCounter = localStorage.getItem('basketCounter');
-          //this.basketCounter = this.basketModel.basketCounter;
+        self.basketModel.initBasketCounter();
 
         if (this.basketModel.basketCounter == 0) {
             $(".main_content > form").html("<h1>Корзина пуста</h1>");
@@ -39,18 +34,6 @@ module.exports = {
 
             self.basketModel.removeGood(targetId);
             self.basketCount();
-
-            /*var target = event.target,
-              targetId = $(target).parent().prevAll(".table_col_art").html(),
-              totalCounterMinus = $(target).parent().prevAll(".table_col_numberof").children("input").attr("value");
-
-            $(target).parent().parent().remove();
-            self.basketCounter = self.basketCounter - totalCounterMinus;
-            localStorage.setItem('basketCounter', self.basketCounter);
-            self.countTotalNumberof();
-            self.countTotalPrice();
-            self.basketCount();
-            localStorage.removeItem("good#" + targetId);*/
         });
 
         $(".table_numberof_minus").on("click", function (event) {
@@ -61,7 +44,6 @@ module.exports = {
                 return
             } else {
                 --counter;
-                //--self.basketCounter;
                 --self.basketModel.basketCounter;
             }
 
@@ -99,13 +81,7 @@ module.exports = {
             costOf = parseInt(price) * counter,
             changedElement = $(target).parent().nextAll(".table_col_cost").children("input"),
             targetId = $(target).parent().prevAll(".table_col_art").html();
-            //localStorageItem = JSON.parse(localStorage.getItem('good#' + targetId));
-
-        //localStorage.setItem('basketCounter', self.basketCounter);
-
-        //localStorageItem.numberOf = counter;
-        //localStorage.setItem("good#" + targetId, JSON.stringify(localStorageItem));
-
+        
         this.basketModel.changeQnty(targetId, counter);
 
         $(changedElement).attr("value", costOf);
@@ -134,7 +110,5 @@ module.exports = {
         }
         $(".total_price").attr("value", totalPrice);
     }
-
-
 };
 
