@@ -35,7 +35,7 @@
         // check for nodeJS
         hasModule = (typeof module !== 'undefined' && module && module.exports),
 
-        // ASP.NET json date format regex
+        // ASP.NET data date format regex
         aspNetJsonRegex = /^\/?Date\((\-?\d+)/i,
         aspNetTimeSpanJsonRegex = /(\-)?(?:(\d*)\.)?(\d+)\:(\d+)(?:\:(\d+)\.?(\d{3})?)?/,
 

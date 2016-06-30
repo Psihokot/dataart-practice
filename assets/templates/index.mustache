@@ -1,0 +1,92 @@
+<div class="main_content_header">
+    <div class="main_content_navigation">
+        <a href="#index">Главная</a>
+        <div class="navigation_arrow"></div>
+        <span>Каталог</span>
+    </div>
+    <div class="mcontent_header_categories">
+        <div class="show_categories">показать:</div>
+        <ul class="categories">
+            <li>автомодели</li>
+            <li>самолеты</li>
+            <li>вертолеты</li>
+            <li>аккумуляторы, кабели</li>
+            <li>аппаратура</li>
+            <li>инструмент, материалы</li>
+            <li>винты, крепеж, клей</li>
+            <li class="plus_category"></li>
+        </ul>
+    </div>
+    <div class="mcontent_header_sort">
+        <span>сортировать по:</span>
+        <div class="sort_filter active">
+            <span>дате добавления</span>
+            <div class="navigation_arrow_down"></div>
+        </div>
+        <div class="sort_filter">
+            <span>стоимости</span>
+            <div class="navigation_arrow_up"></div>
+        </div>
+    </div>
+</div>
+<div class="main_goods">
+    {{#goods}}
+        <div class="main_goods_element">
+            <div class="goods_element_image" rel="tooltip" title="{{title}}">
+                <a class="fancybox" rel="group" href="{{urlBigPic1}}" title="{{title}}">
+                    <img src="{{urlPic}}">
+                    <div class="good_price">{{price}} р.</div>
+                </a>
+            </div>
+            <div class="goods_element_title">
+                <a href="{{url}}">{{title}}</a>
+            </div>
+        </div>
+    {{/goods}}
+</div>
+<div class="main_pages">
+    <span>Страницы:</span>
+    <div class="main_pages_list">
+        <ul>
+            <li>
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a class="selected" href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">10</a>
+            </li>
+            <li class="list_dots">..</li>
+            <li>
+                <a href="#">45</a>
+            </li>
+        </ul>
+    </div>
+    <div class="main_pages_switch">
+        <div class="previous_page">
+            <div class="previous_page_icon"></div>
+            <a href="#">Предыдущая страница</a>
+        </div>
+        <span>-</span>
+        <div class="next_page">
+            <a href="#">Следующая страница</a>
+            <div class="next_page_icon"></div>
+        </div>
+    </div>
+</div>
+<div class="main_about">
+    <h1>О компании</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum.</p>
+    <a href="#">читать дальше</a>
+</div>

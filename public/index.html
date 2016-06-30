@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/fancyBox/source/jquery.fancybox.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+<div class="modal fade" id="messageModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">×</button>
+                <h3>Отправьте нам сообщение</h3>
+            </div>
+            <div class="modal-body" data-toggle="modal">
+                <form class="well">
+                    <input type="text" class="span3" placeholder="Ваше имя">
+                    <textarea class="input-xlarge" rows="8" cols="64" placeholder="Ваше сообщение..."></textarea>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layout_positioner">
+    <header>
+        <div class="header_menu clearfix">
+            <div class="header_links_container">
+                <div class="header_links">
+                <ul>
+                    <li>
+                        <a href="#index">О компании</a>
+                    </li>
+                    <li>
+                        <a href="#index">Каталог</a>
+                    </li>
+                    <li>
+                        <a href="#">Доставка</a>
+                    </li>
+                    <li>
+                        <a href="#">Наши магазины</a>
+                    </li>
+                    <li>
+                        <a href="#">Оптовикам</a>
+                    </li>
+                    <li>
+                        <a href="#">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div class="header_search">
+                <div class="header_search_area">
+                    <input type="text" placeholder="поиск по каталогу">
+                    <div class="header_search_image"></div>
+                </div>
+            </div>
+        </div>
+        <div class="header_content">
+            <a href="#index" class="header_logo"></a>
+            <div class="header_contacts_container">
+                <div class="header_contacts">
+                <div class="header_contacts_numbers">
+                    <i class="icon hc_numbers_icon"></i>
+                    <span>234-22-33</span>, <span>234-22-44</span>
+                </div>
+                <div class="header_contacts_mail">
+                    <i class="icon hc_mail_icon"></i>
+                    <a href="#messageModal" data-toggle="modal">Написать сообщение</a>
+                </div>
+                <div class="header_contacts_icq">
+                    <i class="icon hc_icq_icon"></i>
+                    288-22-08
+                </div>
+            </div>
+            </div>
+            <div class="header_personal">
+                <div class="header_personal_basket">
+                    <i class="icon hp_basket_icon"></i>
+                    <a href="#basket" class="basket_link disabled">В вашей корзине <span>пусто</span></a>
+                </div>
+                <div class="header_personal_account">
+                    <i class="icon hp_account_icon"></i>
+                    <a href="#">Личный кабинет</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main clearfix">
+        <aside class="main_leftmenu">
+            <menu class="main_leftmenu_categories" id="accordion">
+                <li>
+                    <a href="#">Автомодели</a>
+                </li>
+                <li>
+                    <a href="#">Самолеты</a>
+                </li>
+                <li class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="pointed accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse">Вертолеты</a>
+                    </div>
+                    <div id="collapse" class="accordion-body collapse in" aria-expanded="true">
+                        <div class="accordion-inner">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon leftmenu_sublist_icon"></i>
+                                        Для начинающих (Соосные)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon leftmenu_sublist_icon"></i>
+                                        С электродвигателем
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon leftmenu_sublist_icon"></i>
+                                        Вертолеты с ДВС
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon leftmenu_sublist_icon"></i>
+                                        Вертолеты Mikado
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Аккумуляторы, кабели</a>
+                </li>
+                <li>
+                    <a href="#">Аппаратура</a>
+                </li>
+                <li>
+                    <a href="#">Инструмент, материалы</a>
+                </li>
+                <li>
+                    <a href="#">Винты, крепеж, клей</a>
+                </li>
+                <li>
+                    <a href="#">Двигатели ДВС</a>
+                </li>
+                <li>
+                    <a href="#">Электродвигатели</a>
+                </li>
+                <li>
+                    <a href="#">Катера, яхты</a>
+                </li>
+            </menu>
+            <div class="main_leftmenu_news">
+                <div class="leftmenu_news_element">
+                    <div class="news_element_date">01.01.2016</div>
+                    <div class="news_element_title">
+                        <a href="#">Много скидок!</a>
+                    </div>
+                    <div class="news_element_content">Настало лето, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбилеем.</div>
+                </div>
+                <div class="leftmenu_news_element">
+                    <div class="news_element_date">01.01.2016</div>
+                    <div class="news_element_title">
+                        <a href="#">Обменяй старое на новое!</a>
+                    </div>
+                    <div class="news_element_content">Настало лето, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбилеем.</div>
+                </div>
+                <div class="leftmenu_news_element">
+                    <div class="news_element_date">01.01.2016</div>
+                    <div class="news_element_title">
+                        <a href="#">Обновление в каталогах!</a>
+                    </div>
+                    <div class="news_element_content">Настало лето, а это значит, что скоро вас ждет большое количество скидок в связи с нашим юбилеем.</div>
+                </div>
+            </div>
+            <div class="main_leftmenu_button">
+                <input type="button" name="contact_us" value="Написать нам">
+                <div class="leftmenu_button_icon"></div>
+            </div>
+            <div class="main_leftmenu_advertising">
+                <div class="leftmenu_advertising_element"></div>
+                <div class="leftmenu_advertising_element"></div>
+            </div>
+        </aside>
+        <div class="main_content"></div>
+    </div>
+    <div class="main_bottom_menu">
+        <div class="bottom_menu_links">
+            <ul>
+                <li>
+                    <a href="#">О компании</a>
+                </li>
+                <li>
+                    <a href="#">Каталог</a>
+                </li>
+                <li>
+                    <a href="#">Доставка</a>
+                </li>
+                <li>
+                    <a href="#">Наши магазины</a>
+                </li>
+                <li>
+                    <a href="#">Оптовикам</a>
+                </li>
+                <li>
+                    <a href="#">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="clearfix">
+        <div class="footer_info">
+            <div class="rights">@ 2007-2016 Интернет-супермаркет <a href="#">"Elwau.ru"</a></div>
+            <div>Адрес: 105118, г.Москва, ул. Кирпичная, д. 22</div>
+            <div>Тел.: +7 (495) 540-55-1, 8 (800) 555-55-90</div>
+            <div>Email: info@elwau.ru</div>
+        </div>
+        <div class="footer_counters">
+            <div class="footer_counter">
+                <img src="../assets/images/counter.png">
+            </div>
+            <div class="footer_counter">
+                <img src="../assets/images/counter.png">
+            </div>
+        </div>
+        <div class="footer_author">
+            <div>
+                <span>Дизайн сайта - </span>
+                <a href="#">Артемий Лебедев</a></div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</div>
+</body>
+</html>
